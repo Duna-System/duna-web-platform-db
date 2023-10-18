@@ -21,8 +21,8 @@ export const connectToDatabase = async () => {
 
         const db: Db = client.db(databaseName)
 
-        // Chama a função para criar a coleção com validação
-        await criarColecaoComValidacao(mongodbUri, databaseName, collectionName)
+        // // Chama a função para criar a coleção com validação
+        // await criarColecaoComValidacao(mongodbUri, databaseName, collectionName)
 
         // Feche a conexão após criar a coleção com validação
         await client.close()

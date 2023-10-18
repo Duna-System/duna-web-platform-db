@@ -1,1 +1,1 @@
-export declare const connectToDatabase: () => Promise<void>
+export declare const connectToDatabase: () => Promise<void>;
