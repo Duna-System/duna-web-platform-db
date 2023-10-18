@@ -42,4 +42,4 @@ const UserModel = mongoose.model<IUsers>(
 
 export default UserModel
 
-export { config, criarColecaoComValidacao, connectToDatabase }
+export { config, criarColecaoComValidacao, connectToDatabase,UserModel }
