@@ -17,20 +17,17 @@ const connectToDatabase = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const mongodbUri = config_1.config.db.mongoUri;
         const databaseName = config_1.config.db.databaseName;
-        const collectionName = config_1.config.db.collectionName;
-        if (!mongodbUri || !databaseName || !collectionName) {
+        if (!mongodbUri || !databaseName) {
             const err = duna_web_platform_error_defs_1.ErrorMessages.ResourceDoesNotExist;
-            err.Details = 'Resource cannot be found ';
+            err.Details = 'Resource cannot be found';
             throw err;
         }
         const client = new mongodb_1.MongoClient(mongodbUri);
         yield client.connect();
-        console.log('Connected to MongoDB ');
-        const db = client.db(databaseName);
-        // // Chama a função para criar a coleção com validação
-        // await criarColecaoComValidacao(mongodbUri, databaseName, collectionName)
-        // Feche a conexão após criar a coleção com validação
-        yield client.close();
+        console.log('Connected to MongoDB');
+        // // Chame a função para criar a coleção com validação
+        // await criarColecaoComValidacao(client);
+        return client.db(databaseName);
     }
     catch (error) {
         throw error;

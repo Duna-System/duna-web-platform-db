@@ -1,32 +1,28 @@
-import { config } from './config'
-import { ErrorMessages } from 'duna-web-platform-error-defs'
-import { MongoClient, Db, Collection } from 'mongodb'
-import { criarColecaoComValidacao } from './validationDB'
+import { config } from './config';
+import { ErrorMessages } from 'duna-web-platform-error-defs';
+import { MongoClient, Db } from 'mongodb';
+import { criarColecaoComValidacao } from './validationDB';
 
-export const connectToDatabase = async () => {
+export const connectToDatabase = async (): Promise<Db> => {
     try {
-        const mongodbUri = config.db.mongoUri
-        const databaseName = config.db.databaseName
-        const collectionName = config.db.collectionName
+        const mongodbUri = config.db.mongoUri;
+        const databaseName = config.db.databaseName;
 
-        if (!mongodbUri || !databaseName || !collectionName) {
-            const err = ErrorMessages.ResourceDoesNotExist
-            err.Details = 'Resource cannot be found '
-            throw err
+        if (!mongodbUri || !databaseName) {
+            const err = ErrorMessages.ResourceDoesNotExist;
+            err.Details = 'Resource cannot be found';
+            throw err;
         }
 
-        const client = new MongoClient(mongodbUri)
-        await client.connect()
-        console.log('Connected to MongoDB ')
+        const client = new MongoClient(mongodbUri);
+        await client.connect();
+        console.log('Connected to MongoDB');
 
-        const db: Db = client.db(databaseName)
+        // // Chame a função para criar a coleção com validação
+        // await criarColecaoComValidacao(client);
 
-        // // Chama a função para criar a coleção com validação
-        // await criarColecaoComValidacao(mongodbUri, databaseName, collectionName)
-
-        // Feche a conexão após criar a coleção com validação
-        await client.close()
+        return client.db(databaseName);
     } catch (error) {
-        throw error
+        throw error;
     }
-}
+};
