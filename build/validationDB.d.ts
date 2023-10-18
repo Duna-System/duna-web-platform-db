@@ -1,1 +1,1 @@
-export declare function criarColecaoComValidacao(uri: string, databaseName: string, collectionName: string): Promise<void>;
+export declare function createCollectionWithValidation(uri: string, databaseName: string, collectionName: string): Promise<void>;

@@ -12,17 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.criarColecaoComValidacao = void 0;
+exports.createCollectionWithValidation = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const mongodb_1 = require("mongodb");
 dotenv_1.default.config();
-function criarColecaoComValidacao(uri, databaseName, collectionName) {
+function createCollectionWithValidation(uri, databaseName, collectionName) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new mongodb_1.MongoClient(uri);
         yield client.connect();
         const db = client.db(databaseName);
         const colecao = db.collection(collectionName);
-        const regrasDeValidacao = {
+        const validationRules = {
             validator: {
                 $jsonSchema: {
                     bsonType: 'object',
@@ -68,12 +68,12 @@ function criarColecaoComValidacao(uri, databaseName, collectionName) {
         yield colecao.createIndex({ outroCampo: 1 });
         yield db.command({
             collMod: colecao.collectionName,
-            validator: regrasDeValidacao.validator,
-            validationLevel: regrasDeValidacao.validationLevel,
-            validationAction: regrasDeValidacao.validationAction,
+            validator: validationRules.validator,
+            validationLevel: validationRules.validationLevel,
+            validationAction: validationRules.validationAction,
         });
         console.log(`Coleção ${collectionName} com regras de validação criada com sucesso.`);
         yield client.close();
     });
 }
-exports.criarColecaoComValidacao = criarColecaoComValidacao;
+exports.createCollectionWithValidation = createCollectionWithValidation;
