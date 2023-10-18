@@ -1,2 +1,1 @@
-import { Db } from 'mongodb';
-export declare const connectToDatabase: () => Promise<Db>;
+export declare const connectToDatabase: () => Promise<void>;
