@@ -1,21 +1,21 @@
 import mongoose, { Document, Model } from 'mongoose'
 
 export interface IUsers extends Document {
-    _id: string;
-    name: string;
-    lastName: string;
-    email: string;
-    password: string;
-    actingField: string;
-    phoneNumber: string;
-    postalCode: string;
-    useObjective: string;
-    imagePath: string;
-    cep: string;
-    street: string;
-    number: string;
-    complement: string;
-    [key: string]: any;
+    _id: string
+    name: string
+    lastName: string
+    email: string
+    password: string
+    actingField: string
+    phoneNumber: string
+    postalCode: string
+    useObjective: string
+    imagePath: string
+    cep: string
+    street: string
+    number: string
+    complement: string
+    [key: string]: any
 }
 
 const UserSchema = new mongoose.Schema<IUsers>({
@@ -32,8 +32,8 @@ const UserSchema = new mongoose.Schema<IUsers>({
     street: { type: String, required: true, default: '' },
     number: { type: String, required: true, default: '' },
     complement: { type: String, default: '' },
-});
+})
 
-const UserModel: Model<IUsers> = mongoose.model<IUsers>('User', UserSchema);
+const UserModel: Model<IUsers> = mongoose.model<IUsers>('User', UserSchema)
 
-export { UserModel };
+export { UserModel }
