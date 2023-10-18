@@ -3,7 +3,7 @@ import { MongoClient, Db, Collection } from 'mongodb'
 
 dotenv.config()
 
-export async function criarColecaoComValidacao(
+export async function createCollectionWithValidation(
     uri: string,
     databaseName: string,
     collectionName: string
@@ -14,7 +14,7 @@ export async function criarColecaoComValidacao(
     const db: Db = client.db(databaseName)
     const colecao: Collection = db.collection(collectionName)
 
-    const regrasDeValidacao = {
+    const validationRules = {
         validator: {
             $jsonSchema: {
                 bsonType: 'object',
@@ -62,9 +62,9 @@ export async function criarColecaoComValidacao(
 
     await db.command({
         collMod: colecao.collectionName,
-        validator: regrasDeValidacao.validator,
-        validationLevel: regrasDeValidacao.validationLevel,
-        validationAction: regrasDeValidacao.validationAction,
+        validator: validationRules.validator,
+        validationLevel: validationRules.validationLevel,
+        validationAction: validationRules.validationAction,
     })
 
     console.log(
