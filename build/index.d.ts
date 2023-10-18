@@ -1,3 +1,3 @@
 import { criarColecaoComValidacao } from './validationDB';
-import { UserModel } from "./validationApp";
-export { criarColecaoComValidacao, UserModel };
+import { UserModel, IUsers } from "./validationApp";
+export { criarColecaoComValidacao, UserModel, IUsers };

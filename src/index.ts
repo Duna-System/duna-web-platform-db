@@ -1,4 +1,4 @@
 import { criarColecaoComValidacao } from './validationDB'
-import  {UserModel} from "./validationApp"
+import  {UserModel,IUsers} from "./validationApp"
 
-export {  criarColecaoComValidacao,UserModel}
+export {  criarColecaoComValidacao,UserModel,IUsers}
