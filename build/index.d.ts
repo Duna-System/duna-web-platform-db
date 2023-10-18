@@ -1,7 +1,7 @@
 import { config } from './config';
 import { criarColecaoComValidacao } from './validationDB';
 import { connectToDatabase } from './connect';
-import mongoose, { Document } from 'mongoose';
+import { Document, Model } from 'mongoose';
 export interface IUsers extends Document {
     _id: string;
     name: string;
@@ -19,8 +19,6 @@ export interface IUsers extends Document {
     complement: string;
     [key: string]: any;
 }
-declare const UserModel: mongoose.Model<IUsers, {}, {}, {}, mongoose.Document<unknown, {}, IUsers> & IUsers & Required<{
-    _id: string;
-}>, any>;
-export default UserModel;
+declare const UserModel: Model<IUsers>;
+export { UserModel };
 export { config, criarColecaoComValidacao, connectToDatabase };
