@@ -12,11 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createCollectionWithValidation = void 0;
+exports.createEntityCollectionWithValidation = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const mongodb_1 = require("mongodb");
 dotenv_1.default.config();
-function createCollectionWithValidation(uri, databaseName, collectionName) {
+function createEntityCollectionWithValidation(uri, databaseName, collectionName) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new mongodb_1.MongoClient(uri);
         yield client.connect();
@@ -27,37 +27,37 @@ function createCollectionWithValidation(uri, databaseName, collectionName) {
                 $jsonSchema: {
                     bsonType: 'object',
                     required: [
+                        'projectId',
+                        'type',
                         'name',
-                        'lastName',
-                        'password',
-                        'postalCode',
-                        'street',
-                        'number',
+                        'location',
+                        'sizeMB',
+                        'shareGroup',
                     ],
                     properties: {
+                        projectId: {
+                            bsonType: 'string',
+                            description: 'Project ID must be a string and is required.',
+                        },
+                        type: {
+                            bsonType: 'string',
+                            description: 'Type must be a string and is required.',
+                        },
                         name: {
                             bsonType: 'string',
-                            description: 'Deve ser uma string e é obrigatório.',
+                            description: 'Name must be a string and is required.',
                         },
-                        lastName: {
+                        location: {
                             bsonType: 'string',
-                            description: 'Deve ser uma string e é obrigatório.',
+                            description: 'Location must be a string and is required.',
                         },
-                        password: {
-                            bsonType: 'string',
-                            description: 'Deve ser uma string e é obrigatório.',
+                        sizeMB: {
+                            bsonType: 'number',
+                            description: 'SizeMB must be a number and is required.',
                         },
-                        postalCode: {
+                        shareGroup: {
                             bsonType: 'string',
-                            description: 'Deve ser uma string e é obrigatório.',
-                        },
-                        street: {
-                            bsonType: 'string',
-                            description: 'Deve ser uma string e é obrigatório.',
-                        },
-                        number: {
-                            bsonType: 'string',
-                            description: 'Deve ser uma string e é obrigatório.',
+                            description: 'Share group must be a string and is required.',
                         },
                     },
                 },
@@ -65,15 +65,15 @@ function createCollectionWithValidation(uri, databaseName, collectionName) {
             validationLevel: 'strict',
             validationAction: 'error',
         };
-        yield colecao.createIndex({ outroCampo: 1 });
+        yield colecao.createIndex({ _id: 1 });
         yield db.command({
             collMod: colecao.collectionName,
             validator: validationRules.validator,
             validationLevel: validationRules.validationLevel,
             validationAction: validationRules.validationAction,
         });
-        console.log(`Coleção ${collectionName} com regras de validação criada com sucesso.`);
+        console.log(`Collection ${collectionName} with validation rules created successfully.`);
         yield client.close();
     });
 }
-exports.createCollectionWithValidation = createCollectionWithValidation;
+exports.createEntityCollectionWithValidation = createEntityCollectionWithValidation;

@@ -1,8 +1,9 @@
-import { createCollectionWithValidation } from './validationDB'
-import { UserModel } from './validationApp'
-import { EntityType, IUsers, ShareGroupType } from './interefaces'
+import { createUserCollectionWithValidation } from './users/validationDbUsers'
+import { UserModel } from './users/validationUserModel'
+import { IUsers } from './interfaces'
 import { connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents} from './connection'
-import { IEntity } from './interefaces'
-import entityModel from './validationEntityApp'
+import { IEntityDb } from './interfaces'
+import {entityModel} from './entity/validationEntityModel'
+import {createEntityCollectionWithValidation} from './entity/validationEntityDb'
 
-export { createCollectionWithValidation, connectToDatabase, checkConnectionStatus,subscribeToDatabaseEvents,UserModel, entityModel,IUsers,IEntity,EntityType,ShareGroupType}
+export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus,subscribeToDatabaseEvents,createEntityCollectionWithValidation,UserModel, entityModel,IUsers,IEntityDb}

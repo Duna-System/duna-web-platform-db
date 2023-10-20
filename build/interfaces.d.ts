@@ -1,4 +1,3 @@
-import { Document, Model } from 'mongoose';
 export interface IUsers extends Document {
     _id: string;
     name: string;
@@ -16,5 +15,12 @@ export interface IUsers extends Document {
     complement: string;
     [key: string]: any;
 }
-declare const UserModel: Model<IUsers>;
-export { UserModel };
+export interface IEntityDb {
+    _id: string;
+    projectId: string;
+    type: string;
+    name: string;
+    location: string;
+    sizeMB: number;
+    shareGroup: string;
+}

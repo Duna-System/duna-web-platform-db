@@ -1,5 +1,5 @@
 import mongoose, { Document, Model } from 'mongoose'
-import { IUsers } from './interefaces'
+import { IUsers } from '../interfaces'
 
 const UserSchema = new mongoose.Schema<IUsers>({
     _id: { type: String, required: true },

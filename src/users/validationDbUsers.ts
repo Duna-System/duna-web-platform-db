@@ -3,7 +3,7 @@ import { MongoClient, Db, Collection } from 'mongodb'
 
 dotenv.config()
 
-export async function createCollectionWithValidation(
+export async function createUserCollectionWithValidation(
     uri: string,
     databaseName: string,
     collectionName: string
@@ -58,7 +58,7 @@ export async function createCollectionWithValidation(
         validationAction: 'error',
     }
 
-    await colecao.createIndex({ outroCampo: 1 })
+    await colecao.createIndex({ _id: 1 })
 
     await db.command({
         collMod: colecao.collectionName,

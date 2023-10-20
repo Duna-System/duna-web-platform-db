@@ -16,24 +16,12 @@ export interface IUsers extends Document {
     [key: string]: any
 }
 
-export enum EntityType {
-    PointCloud = 'clouds',
-    Image = 'images',
-    BIM = 'bim',
-    Unknown = 'unknown',
-  }
-  
-  export enum ShareGroupType {
-    Public = 'public',
-    Private = 'private',
-  }
-  
-  export interface IEntity {
+  export interface IEntityDb {
     _id: string;
     projectId: string;
-    type: EntityType; // Enum to string.
+    type: string; // Enum to string.
     name: string;
     location: string;
     sizeMB: number;
-    shareGroup: ShareGroupType;
+    shareGroup: string;
   }

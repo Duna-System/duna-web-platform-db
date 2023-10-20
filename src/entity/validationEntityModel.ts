@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
-import { IEntity } from './interefaces';
+import { IEntityDb } from '../interfaces';
 
-const entitySchema = new Schema<IEntity>({
+  const entitySchema = new Schema<IEntityDb>({
   _id: { type: String, required: true },
   projectId: { type: String, required: true, index: true },
   type: { type: String, required: true },
@@ -11,5 +11,5 @@ const entitySchema = new Schema<IEntity>({
   shareGroup: { type: String, required: true },
 });
 
-const entityModel = model<IEntity>('entity', entitySchema);
-export default entityModel;
+export const entityModel = model<IEntityDb>('entity', entitySchema);
+
