@@ -65,7 +65,7 @@ function createEntityCollectionWithValidation(uri, databaseName, collectionName)
             validationLevel: 'strict',
             validationAction: 'error',
         };
-        yield colecao.createIndex({ _id: 1 });
+        yield colecao.createIndex({ projectId: 1 });
         yield db.command({
             collMod: colecao.collectionName,
             validator: validationRules.validator,
