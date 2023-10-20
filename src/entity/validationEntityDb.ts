@@ -58,7 +58,7 @@ export async function createEntityCollectionWithValidation(
         validationAction: 'error',
     };
 
-    await colecao.createIndex({ _id: 1 });
+    await colecao.createIndex({ projectId: 1 });
 
     await db.command({
         collMod: colecao.collectionName,
