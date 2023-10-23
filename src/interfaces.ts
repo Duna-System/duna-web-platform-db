@@ -19,9 +19,20 @@ export interface IUsers extends Document {
   export interface IEntityDb {
     _id: string;
     projectId: string;
-    type: string; // Enum to string.
+    type: EntityType; // Enum to string.
     name: string;
     location: string;
     sizeMB: number;
-    shareGroup: string;
+    shareGroup: ShareGroupType;
   }
+  export enum ShareGroupType {
+    Public = 'public',
+    Private = 'private',
+  }
+  // This already exports entity as strings if convertible.
+export enum EntityType {
+  PointCloud = 'clouds',
+  Image = 'images',
+  BIM = 'bim',
+  Unknown = 'unknown',
+}
