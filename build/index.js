@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.entityModel = exports.UserModel = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
+exports.projectModel = exports.entityModel = exports.UserModel = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
 const validationDbUsers_1 = require("./users/validationDbUsers");
 Object.defineProperty(exports, "createUserCollectionWithValidation", { enumerable: true, get: function () { return validationDbUsers_1.createUserCollectionWithValidation; } });
 const validationUserModel_1 = require("./users/validationUserModel");
@@ -11,5 +11,9 @@ Object.defineProperty(exports, "checkConnectionStatus", { enumerable: true, get:
 Object.defineProperty(exports, "subscribeToDatabaseEvents", { enumerable: true, get: function () { return connection_1.subscribeToDatabaseEvents; } });
 const validationEntityModel_1 = require("./entity/validationEntityModel");
 Object.defineProperty(exports, "entityModel", { enumerable: true, get: function () { return validationEntityModel_1.entityModel; } });
+const validationProjectsModel_1 = require("./projects/validationProjectsModel");
+Object.defineProperty(exports, "projectModel", { enumerable: true, get: function () { return validationProjectsModel_1.projectModel; } });
 const validationEntityDb_1 = require("./entity/validationEntityDb");
 Object.defineProperty(exports, "createEntityCollectionWithValidation", { enumerable: true, get: function () { return validationEntityDb_1.createEntityCollectionWithValidation; } });
+const validationProjectsDb_1 = require("./projects/validationProjectsDb");
+Object.defineProperty(exports, "createProjectCollectionWithValidation", { enumerable: true, get: function () { return validationProjectsDb_1.createProjectCollectionWithValidation; } });
