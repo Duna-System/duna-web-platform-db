@@ -6,13 +6,13 @@ dotenv.config();
 export async function createProjectCollectionWithValidation(
     uri: string,
     databaseName: string,
-    collectionName: string
+    collection_projects: string
 ): Promise<void> {
     const client = new MongoClient(uri);
     await client.connect();
 
     const db: Db = client.db(databaseName);
-    const colecao: Collection = db.collection(collectionName);
+    const colecao: Collection = db.collection(collection_projects);
 
     const validationRules = {
         validator: {
@@ -70,14 +70,14 @@ export async function createProjectCollectionWithValidation(
     await colecao.createIndex({ user_id: 1 });
 
     await db.command({
-        collMod: colecao.collectionName,
+        collMod: collection_projects,
         validator: validationRules.validator,
         validationLevel: validationRules.validationLevel,
         validationAction: validationRules.validationAction,
     });
 
     console.log(
-        `Coleção ${collectionName} com regras de validação criada com sucesso.`
+        `Coleção ${collection_projects} com regras de validação criada com sucesso.`
     );
 
     await client.close();

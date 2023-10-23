@@ -6,13 +6,13 @@ dotenv.config();
 export async function createOrganizationCollectionWithValidation(
   uri: string,
   databaseName: string,
-  collectionName: string
+  collection_organizations: string
 ): Promise<void> {
   const client = new MongoClient(uri);
   await client.connect();
 
   const db: Db = client.db(databaseName);
-  const colecao: Collection = db.collection(collectionName);
+  const colecao: Collection = db.collection(collection_organizations);
 
 
   const validationRules = {
@@ -66,13 +66,13 @@ export async function createOrganizationCollectionWithValidation(
 
 
   await db.command({
-    collMod: collectionName,
+    collMod: collection_organizations,
     validator: validationRules.validator,
     validationLevel: validationRules.validationLevel,
     validationAction: validationRules.validationAction,
   });
 
-  console.log(`Collection ${collectionName} with validation rules created successfully.`);
+  console.log(`Collection ${collection_organizations} with validation rules created successfully.`);
 
   await client.close();
 }
