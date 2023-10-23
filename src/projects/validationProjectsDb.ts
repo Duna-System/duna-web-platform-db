@@ -3,6 +3,7 @@ import { MongoClient, Db, Collection } from 'mongodb';
 
 dotenv.config();
 
+
 export async function createProjectCollectionWithValidation(
     uri: string,
     databaseName: string,
