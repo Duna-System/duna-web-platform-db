@@ -1,6 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EntityType = exports.ShareGroupType = exports.ProjectAccessType = exports.ProjectStatus = void 0;
+exports.EntityType = exports.ShareGroupType = exports.ProjectAccessType = exports.ProjectStatus = exports.OrganizationMemberRole = void 0;
+var OrganizationMemberRole;
+(function (OrganizationMemberRole) {
+    OrganizationMemberRole["VIEWER"] = "VIEWER";
+    OrganizationMemberRole["EDITOR"] = "EDITOR";
+    OrganizationMemberRole["ADMIN"] = "ADMIN";
+    OrganizationMemberRole["OWNER"] = "OWNER";
+})(OrganizationMemberRole || (exports.OrganizationMemberRole = OrganizationMemberRole = {}));
 var ProjectStatus;
 (function (ProjectStatus) {
     ProjectStatus["IN_PROGRESS"] = "IN_PROGRESS";

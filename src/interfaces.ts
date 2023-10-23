@@ -53,6 +53,24 @@ export interface IProjectDb {
     owner?: string;
     accessType?: ProjectAccessType;
 }
+export interface IOrganization {
+  _id: string;
+  memberLimit: number;
+  members: Array<IMember>;
+  name: string;
+  type: string;
+}
+export interface IMember {
+  user: string;
+  role: OrganizationMemberRole;
+}
+
+export enum OrganizationMemberRole {
+  VIEWER = 'VIEWER',
+  EDITOR = 'EDITOR',
+  ADMIN = 'ADMIN',
+  OWNER = 'OWNER',
+}
 export enum ProjectStatus {
     IN_PROGRESS = 'IN_PROGRESS',
     FINISHED = 'FINISHED',
