@@ -16,12 +16,12 @@ exports.createOrganizationCollectionWithValidation = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const mongodb_1 = require("mongodb");
 dotenv_1.default.config();
-function createOrganizationCollectionWithValidation(uri, databaseName, collectionName) {
+function createOrganizationCollectionWithValidation(uri, databaseName, collection_organizations) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new mongodb_1.MongoClient(uri);
         yield client.connect();
         const db = client.db(databaseName);
-        const colecao = db.collection(collectionName);
+        const colecao = db.collection(collection_organizations);
         const validationRules = {
             validator: {
                 $jsonSchema: {
@@ -70,12 +70,12 @@ function createOrganizationCollectionWithValidation(uri, databaseName, collectio
         };
         yield colecao.createIndex({ user: 1 });
         yield db.command({
-            collMod: collectionName,
+            collMod: collection_organizations,
             validator: validationRules.validator,
             validationLevel: validationRules.validationLevel,
             validationAction: validationRules.validationAction,
         });
-        console.log(`Collection ${collectionName} with validation rules created successfully.`);
+        console.log(`Collection ${collection_organizations} with validation rules created successfully.`);
         yield client.close();
     });
 }

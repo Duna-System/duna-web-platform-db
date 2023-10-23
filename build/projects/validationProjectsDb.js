@@ -16,12 +16,12 @@ exports.createProjectCollectionWithValidation = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const mongodb_1 = require("mongodb");
 dotenv_1.default.config();
-function createProjectCollectionWithValidation(uri, databaseName, collectionName) {
+function createProjectCollectionWithValidation(uri, databaseName, collection_projects) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new mongodb_1.MongoClient(uri);
         yield client.connect();
         const db = client.db(databaseName);
-        const colecao = db.collection(collectionName);
+        const colecao = db.collection(collection_projects);
         const validationRules = {
             validator: {
                 $jsonSchema: {
@@ -76,12 +76,12 @@ function createProjectCollectionWithValidation(uri, databaseName, collectionName
         };
         yield colecao.createIndex({ user_id: 1 });
         yield db.command({
-            collMod: colecao.collectionName,
+            collMod: collection_projects,
             validator: validationRules.validator,
             validationLevel: validationRules.validationLevel,
             validationAction: validationRules.validationAction,
         });
-        console.log(`Coleção ${collectionName} com regras de validação criada com sucesso.`);
+        console.log(`Coleção ${collection_projects} com regras de validação criada com sucesso.`);
         yield client.close();
     });
 }
