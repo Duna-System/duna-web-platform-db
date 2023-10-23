@@ -18,9 +18,54 @@ export interface IUsers extends Document {
 export interface IEntityDb {
     _id: string;
     projectId: string;
-    type: string;
+    type: EntityType;
     name: string;
     location: string;
     sizeMB: number;
-    shareGroup: string;
+    shareGroup: ShareGroupType;
+}
+export interface QuotaInfo {
+    pointCloudQuotaMB: number;
+    imageSizeQuotaMB: number;
+    BIMSizeQuotaMB: number;
+    pointCloudUsedMB: number;
+    imageUsedMB: number;
+    BIMUsedMB: number;
+}
+export interface IProjectDb {
+    _id: string;
+    user_id: string;
+    name: string;
+    clientName: string;
+    type: string;
+    snapshot?: string;
+    favorite: boolean;
+    quota: QuotaInfo;
+    clouds: Array<string>;
+    images: Array<string>;
+    bim: Array<string>;
+    createdAt: number;
+    modifiedAt: number;
+    publicAccessToken: string;
+    status: ProjectStatus;
+    owner?: string;
+    accessType?: ProjectAccessType;
+}
+export declare enum ProjectStatus {
+    IN_PROGRESS = "IN_PROGRESS",
+    FINISHED = "FINISHED"
+}
+export declare enum ProjectAccessType {
+    INTERNAL = "INTERNAL",
+    PRIVATE = "PRIVATE"
+}
+export declare enum ShareGroupType {
+    Public = "public",
+    Private = "private"
+}
+export declare enum EntityType {
+    PointCloud = "clouds",
+    Image = "images",
+    BIM = "bim",
+    Unknown = "unknown"
 }

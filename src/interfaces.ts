@@ -34,6 +34,33 @@ export interface QuotaInfo {
     imageUsedMB: number;
     BIMUsedMB: number;
 }
+export interface IProjectDb {
+    _id: string;
+    user_id: string;
+    name: string;
+    clientName: string;
+    type: string;
+    snapshot?: string;
+    favorite: boolean;
+    quota: QuotaInfo;
+    clouds: Array<string>;
+    images: Array<string>;
+    bim: Array<string>;
+    createdAt: number;
+    modifiedAt: number;
+    publicAccessToken: string;
+    status: ProjectStatus;
+    owner?: string;
+    accessType?: ProjectAccessType;
+}
+export enum ProjectStatus {
+    IN_PROGRESS = 'IN_PROGRESS',
+    FINISHED = 'FINISHED',
+}
+export enum ProjectAccessType {
+    INTERNAL = 'INTERNAL',
+    PRIVATE = 'PRIVATE',
+}
 
 export enum ShareGroupType {
     Public = 'public',
