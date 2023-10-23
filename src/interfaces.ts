@@ -35,7 +35,7 @@ export interface IProject {
   accessType?: ProjectAccessType;
 }
 
-  export interface IEntity {
+  export interface IEntityDb {
     _id: string;
     projectId: string;
     type: EntityType; // Enum to string.
