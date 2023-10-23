@@ -16,30 +16,30 @@ export interface IUsers extends Document {
     [key: string]: any
 }
 export interface IProjectDb {
-  _id: string;
-  user_id: string;
-  name: string;
-  clientName: string;
-  type: string;
-  snapshot?: string;
-  favorite: boolean;
-  quota: QuotaInfo;
-  clouds: Array<string>;
-  images: Array<string>;
-  bim: Array<string>;
-  createdAt: number;
-  modifiedAt: number;
-  publicAccessToken: string;
-  status: ProjectStatus;
-  owner?: string;
-  accessType?: ProjectAccessType;
+    _id: string;
+    user_id: string;
+    name: string;
+    clientName: string;
+    type: string;
+    snapshot?: string;
+    favorite: boolean;
+    quota: QuotaInfo;
+    clouds: Array<string>;
+    images: Array<string>;
+    bim: Array<string>;
+    createdAt: number;
+    modifiedAt: number;
+    publicAccessToken: string;
+    status: ProjectStatus;
+    owner?: string;
+    accessType?: ProjectAccessType;
 }
 export interface IOrganization {
-  _id: string;
-  memberLimit: number;
-  members: Array<IMember>;
-  name: string;
-  type: string;
+    _id: string;
+    memberLimit: number;
+    members: Array<IMember>;
+    name: string;
+    type: string;
 }
 
 export interface IEntityDb {
@@ -62,39 +62,39 @@ export interface QuotaInfo {
 
 
 export interface IProjectsInfo {
-  projects: Array<IProjectDb>;
+    projects: Array<IProjectDb>;
 }
 
 
 export enum ProjectStatus {
-  IN_PROGRESS = 'IN_PROGRESS',
-  FINISHED = 'FINISHED',
+    IN_PROGRESS = 'IN_PROGRESS',
+    FINISHED = 'FINISHED',
 }
 
 export enum ProjectAccessType {
-  INTERNAL = 'INTERNAL',
-  PRIVATE = 'PRIVATE',
+    INTERNAL = 'INTERNAL',
+    PRIVATE = 'PRIVATE',
 } 
 export enum ShareGroupType {
-  Public = 'public',
-  Private = 'private',
+    Public = 'public',
+    Private = 'private',
 }
 
 
 export interface IMember {
-  user: string;
-  role: OrganizationMemberRole;
+    user: string;
+    role: OrganizationMemberRole;
 }
 export enum OrganizationMemberRole {
-  VIEWER = 'VIEWER',
-  EDITOR = 'EDITOR',
-  ADMIN = 'ADMIN',
-  OWNER = 'OWNER',
+    VIEWER = 'VIEWER',
+    EDITOR = 'EDITOR',
+    ADMIN = 'ADMIN',
+    OWNER = 'OWNER',
 }
 
 export enum EntityType {
-PointCloud = 'clouds',
-Image = 'images',
-BIM = 'bim',
-Unknown = 'unknown',
+    PointCloud = 'clouds',
+    Image = 'images',
+    BIM = 'bim',
+    Unknown = 'unknown',
 }
