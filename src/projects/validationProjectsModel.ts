@@ -28,5 +28,4 @@ const projectSchema = new Schema<IProject>({
   status: { type: String, required: true },
 });
 
-const projectModel = model<IProject>('project', projectSchema);
-export default projectModel;
+export const projectModel = model<IProject>('project', projectSchema);
