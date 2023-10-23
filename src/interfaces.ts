@@ -15,25 +15,6 @@ export interface IUsers extends Document {
     complement: string
     [key: string]: any
 }
-export interface IProject {
-  _id: string;
-  user_id: string;
-  name: string;
-  clientName: string;
-  type: string;
-  snapshot?: string;
-  favorite: boolean;
-  quota: QuotaInfo;
-  clouds: Array<string>;
-  images: Array<string>;
-  bim: Array<string>;
-  createdAt: number;
-  modifiedAt: number;
-  publicAccessToken: string;
-  status: ProjectStatus;
-  owner?: string;
-  accessType?: ProjectAccessType;
-}
 
   export interface IEntityDb {
     _id: string;
@@ -62,6 +43,25 @@ export enum EntityType {
   Image = 'images',
   BIM = 'bim',
   Unknown = 'unknown',
+}
+export interface IProject {
+  _id: string;
+  user_id: string;
+  name: string;
+  clientName: string;
+  type: string;
+  snapshot?: string;
+  favorite: boolean;
+  quota: QuotaInfo;
+  clouds: Array<string>;
+  images: Array<string>;
+  bim: Array<string>;
+  createdAt: number;
+  modifiedAt: number;
+  publicAccessToken: string;
+  status: ProjectStatus;
+  owner?: string;
+  accessType?: ProjectAccessType;
 }
 export interface IProjectsInfo {
   projects: Array<IProject>;

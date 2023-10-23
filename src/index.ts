@@ -1,6 +1,7 @@
 import { createUserCollectionWithValidation } from './users/validationDbUsers'
 import { UserModel } from './users/validationUserModel'
-import { IProject, IUsers } from './interfaces'
+import { IUsers } from './interfaces'
+import { IProject } from './interfaces'
 import { connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents} from './connection'
 import { IEntityDb } from './interfaces'
 import {entityModel} from './entity/validationEntityModel'
