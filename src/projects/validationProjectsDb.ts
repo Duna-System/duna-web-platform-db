@@ -41,7 +41,7 @@ export async function createProjectCollectionWithValidation(
                     name: { bsonType: 'string', description: 'Nome do projeto (string)' },
                     clientName: { bsonType: 'string', description: 'Nome do cliente (string)' },
                     type: { bsonType: 'string', description: 'Tipo do projeto (string)' },
-                    favorite: { bsonType: 'boolean', description: 'Indicador de favorito (boolean)' },
+                    favorite: { bsonType: 'bool', description: 'Indicador de favorito (boolean)' },
                     quota: {
                         bsonType: 'object',
                         required: ['pointCloudQuotaMB', 'imageSizeQuotaMB', 'BIMSizeQuotaMB', 'pointCloudUsedMB', 'imageUsedMB', 'BIMUsedMB'],
