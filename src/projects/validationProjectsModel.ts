@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
-import { IProject } from '../interfaces';
+import { IProjectDb } from '../interfaces';
 
-const projectSchema = new Schema<IProject>({
+const projectSchema = new Schema<IProjectDb>({
   _id: { type: String, required: true },
   user_id: { type: String, required: true, index: true },
   name: { type: String, required: true },
@@ -28,5 +28,5 @@ const projectSchema = new Schema<IProject>({
   status: { type: String, required: true },
 });
 
-export const projectModel = model<IProject>('project', projectSchema);
+export const projectModel = model<IProjectDb>('project', projectSchema);
 

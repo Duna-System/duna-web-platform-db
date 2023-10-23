@@ -62,7 +62,7 @@ export enum EntityType {
   BIM = 'bim',
   Unknown = 'unknown',
 }
-export interface IProject {
+export interface IProjectDb {
   _id: string;
   user_id: string;
   name: string;
@@ -82,7 +82,7 @@ export interface IProject {
   accessType?: ProjectAccessType;
 }
 export interface IProjectsInfo {
-  projects: Array<IProject>;
+  projects: Array<IProjectDb>;
 }
 
 
