@@ -15,7 +15,13 @@ export interface IUsers extends Document {
     complement: string
     [key: string]: any
 }
-
+export interface IOrganization {
+  _id: string;
+  memberLimit: number;
+  members: Array<IMember>;
+  name: string;
+  type: string;
+}
   export interface IEntityDb {
     _id: string;
     projectId: string;
@@ -36,6 +42,18 @@ export interface IUsers extends Document {
   export enum ShareGroupType {
     Public = 'public',
     Private = 'private',
+  }
+
+
+  export interface IMember {
+    user: string;
+    role: OrganizationMemberRole;
+  }
+  export enum OrganizationMemberRole {
+    VIEWER = 'VIEWER',
+    EDITOR = 'EDITOR',
+    ADMIN = 'ADMIN',
+    OWNER = 'OWNER',
   }
 
 export enum EntityType {

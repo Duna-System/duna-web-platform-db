@@ -8,5 +8,6 @@ import {entityModel} from './entity/validationEntityModel'
 import {createEntityCollectionWithValidation} from './entity/validationEntityDb'
 import { createProjectCollectionWithValidation } from './projects/validationProjectsDb'
 import {projectModel} from './projects/validationProjectsModel'
+import { IOrganization } from './interfaces'
 
-export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus,subscribeToDatabaseEvents,createEntityCollectionWithValidation,createProjectCollectionWithValidation,UserModel,projectModel,entityModel,IProject,IUsers,IEntityDb}
+export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus,subscribeToDatabaseEvents,createEntityCollectionWithValidation,createProjectCollectionWithValidation,UserModel,projectModel,entityModel,IProject,IUsers,IEntityDb,IOrganization}
