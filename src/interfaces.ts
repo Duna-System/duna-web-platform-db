@@ -15,8 +15,27 @@ export interface IUsers extends Document {
     complement: string
     [key: string]: any
 }
+export interface IProject {
+  _id: string;
+  user_id: string;
+  name: string;
+  clientName: string;
+  type: string;
+  snapshot?: string;
+  favorite: boolean;
+  quota: QuotaInfo;
+  clouds: Array<string>;
+  images: Array<string>;
+  bim: Array<string>;
+  createdAt: number;
+  modifiedAt: number;
+  publicAccessToken: string;
+  status: ProjectStatus;
+  owner?: string;
+  accessType?: ProjectAccessType;
+}
 
-  export interface IEntityDb {
+  export interface IEntity {
     _id: string;
     projectId: string;
     type: EntityType; // Enum to string.
@@ -25,14 +44,36 @@ export interface IUsers extends Document {
     sizeMB: number;
     shareGroup: ShareGroupType;
   }
+  export interface QuotaInfo {
+    pointCloudQuotaMB: number;
+    imageSizeQuotaMB: number;
+    BIMSizeQuotaMB: number;
+    pointCloudUsedMB: number;
+    imageUsedMB: number;
+    BIMUsedMB: number;
+  }
   export enum ShareGroupType {
     Public = 'public',
     Private = 'private',
   }
-  // This already exports entity as strings if convertible.
+
 export enum EntityType {
   PointCloud = 'clouds',
   Image = 'images',
   BIM = 'bim',
   Unknown = 'unknown',
+}
+export interface IProjectsInfo {
+  projects: Array<IProject>;
+}
+
+
+export enum ProjectStatus {
+  IN_PROGRESS = 'IN_PROGRESS',
+  FINISHED = 'FINISHED',
+}
+
+export enum ProjectAccessType {
+  INTERNAL = 'INTERNAL',
+  PRIVATE = 'PRIVATE',
 }
