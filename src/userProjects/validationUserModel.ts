@@ -8,5 +8,5 @@ const userSchema = new Schema<IUserDb>({
   email: { type: String, required: true },
 });
 
-export const userModel = model<IUserDb>('user', userSchema);
+export const userModelProjects = model<IUserDb>('user', userSchema);
 

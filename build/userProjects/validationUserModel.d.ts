@@ -24,6 +24,6 @@
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
 import { IUserDb } from '../interfaces';
-export declare const userModel: import("mongoose").Model<IUserDb, {}, {}, {}, import("mongoose").Document<unknown, {}, IUserDb> & IUserDb & Required<{
+export declare const userModelProjects: import("mongoose").Model<IUserDb, {}, {}, {}, import("mongoose").Document<unknown, {}, IUserDb> & IUserDb & Required<{
     _id: string;
 }>, any>;
