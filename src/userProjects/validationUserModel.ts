@@ -7,13 +7,12 @@ export interface IUserDb {
     email: string;
   }
   
-
-const userSchema = new Schema<IUserDb>({
+const userProjectSchema = new Schema<IUserDb>({
   _id: { type: String, required: true },
   name: { type: String, required: true },
   lastName: { type: String, required: true },
   email: { type: String, required: true },
 });
 
-export const userModelProjects = model<IUserDb>('user', userSchema);
+export const userModelProjects = model<IUserDb>('user', userProjectSchema);
 
