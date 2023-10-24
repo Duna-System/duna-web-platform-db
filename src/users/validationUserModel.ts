@@ -17,6 +17,6 @@ const UserSchema = new mongoose.Schema<IUsers>({
     complement: { type: String, default: '' },
 })
 
-const UserModel: Model<IUsers> = mongoose.model<IUsers>('User', UserSchema)
+const UserModel: Model<IUsers> = mongoose.model<IUsers>('user', UserSchema)
 
 export { UserModel }
