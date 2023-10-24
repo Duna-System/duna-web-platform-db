@@ -43,31 +43,98 @@ function createProjectCollectionWithValidation(uri, databaseName, collection_pro
                         'status',
                     ],
                     properties: {
-                        _id: { bsonType: 'string', description: 'ID do projeto (string)' },
-                        user_id: { bsonType: 'string', description: 'ID do usuário (string)' },
-                        name: { bsonType: 'string', description: 'Nome do projeto (string)' },
-                        clientName: { bsonType: 'string', description: 'Nome do cliente (string)' },
-                        type: { bsonType: 'string', description: 'Tipo do projeto (string)' },
-                        favorite: { bsonType: 'bool', description: 'Indicador de favorito (boolean)' },
+                        _id: {
+                            bsonType: 'string',
+                            description: 'ID do projeto (string)',
+                        },
+                        user_id: {
+                            bsonType: 'string',
+                            description: 'ID do usuário (string)',
+                        },
+                        name: {
+                            bsonType: 'string',
+                            description: 'Nome do projeto (string)',
+                        },
+                        clientName: {
+                            bsonType: 'string',
+                            description: 'Nome do cliente (string)',
+                        },
+                        type: {
+                            bsonType: 'string',
+                            description: 'Tipo do projeto (string)',
+                        },
+                        favorite: {
+                            bsonType: 'bool',
+                            description: 'Indicador de favorito (boolean)',
+                        },
                         quota: {
                             bsonType: 'object',
-                            required: ['pointCloudQuotaMB', 'imageSizeQuotaMB', 'BIMSizeQuotaMB', 'pointCloudUsedMB', 'imageUsedMB', 'BIMUsedMB'],
+                            required: [
+                                'pointCloudQuotaMB',
+                                'imageSizeQuotaMB',
+                                'BIMSizeQuotaMB',
+                                'pointCloudUsedMB',
+                                'imageUsedMB',
+                                'BIMUsedMB',
+                            ],
                             properties: {
-                                pointCloudQuotaMB: { bsonType: 'number', description: 'Quota para nuvem de pontos (number)' },
-                                imageSizeQuotaMB: { bsonType: 'number', description: 'Quota para tamanho da imagem (number)' },
-                                BIMSizeQuotaMB: { bsonType: 'number', description: 'Quota para tamanho do BIM (number)' },
-                                pointCloudUsedMB: { bsonType: 'number', description: 'Uso de nuvem de pontos (number)' },
-                                imageUsedMB: { bsonType: 'number', description: 'Uso de tamanho da imagem (number)' },
-                                BIMUsedMB: { bsonType: 'number', description: 'Uso de tamanho do BIM (number)' },
+                                pointCloudQuotaMB: {
+                                    bsonType: 'number',
+                                    description: 'Quota para nuvem de pontos (number)',
+                                },
+                                imageSizeQuotaMB: {
+                                    bsonType: 'number',
+                                    description: 'Quota para tamanho da imagem (number)',
+                                },
+                                BIMSizeQuotaMB: {
+                                    bsonType: 'number',
+                                    description: 'Quota para tamanho do BIM (number)',
+                                },
+                                pointCloudUsedMB: {
+                                    bsonType: 'number',
+                                    description: 'Uso de nuvem de pontos (number)',
+                                },
+                                imageUsedMB: {
+                                    bsonType: 'number',
+                                    description: 'Uso de tamanho da imagem (number)',
+                                },
+                                BIMUsedMB: {
+                                    bsonType: 'number',
+                                    description: 'Uso de tamanho do BIM (number)',
+                                },
                             },
                         },
-                        clouds: { bsonType: 'array', items: { bsonType: 'string' }, description: 'Lista de nuvens associadas (array de strings)' },
-                        images: { bsonType: 'array', items: { bsonType: 'string' }, description: 'Lista de imagens associadas (array de strings)' },
-                        bim: { bsonType: 'array', items: { bsonType: 'string' }, description: 'Lista de modelos BIM associados (array de strings)' },
-                        createdAt: { bsonType: 'number', description: 'Timestamp de criação (number)' },
-                        modifiedAt: { bsonType: 'number', description: 'Timestamp de modificação (number)' },
-                        publicAccessToken: { bsonType: 'string', description: 'Token de acesso público (string)' },
-                        status: { bsonType: 'string', description: 'Status do projeto (string)' },
+                        clouds: {
+                            bsonType: 'array',
+                            items: { bsonType: 'string' },
+                            description: 'Lista de nuvens associadas (array de strings)',
+                        },
+                        images: {
+                            bsonType: 'array',
+                            items: { bsonType: 'string' },
+                            description: 'Lista de imagens associadas (array de strings)',
+                        },
+                        bim: {
+                            bsonType: 'array',
+                            items: { bsonType: 'string' },
+                            description: 'Lista de modelos BIM associados (array de strings)',
+                        },
+                        createdAt: {
+                            bsonType: 'number',
+                            description: 'Timestamp de criação (number)',
+                        },
+                        modifiedAt: {
+                            bsonType: 'number',
+                            description: 'Timestamp de modificação (number)',
+                        },
+                        publicAccessToken: {
+                            bsonType: 'string',
+                            description: 'Token de acesso público (string)',
+                        },
+                        status: {
+                            bsonType: 'string',
+                            description: 'Status do projeto (string)',
+                        },
                     },
                 },
             },

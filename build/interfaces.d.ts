@@ -18,11 +18,11 @@ export interface IUsers extends Document {
 export interface IEntityDb {
     _id: string;
     projectId: string;
-    type: EntityType;
+    type: string;
     name: string;
     location: string;
     sizeMB: number;
-    shareGroup: ShareGroupType;
+    shareGroup: string;
 }
 export interface QuotaInfo {
     pointCloudQuotaMB: number;
@@ -47,42 +47,18 @@ export interface IProjectDb {
     createdAt: number;
     modifiedAt: number;
     publicAccessToken: string;
-    status: ProjectStatus;
+    status: string;
     owner?: string;
-    accessType?: ProjectAccessType;
+    accessType?: string;
 }
-export interface IOrganization {
+export interface IOrganizationDb {
     _id: string;
     memberLimit: number;
-    members: Array<IMember>;
+    members: string;
     name: string;
     type: string;
 }
-export interface IMember {
+export interface IMemberDb {
     user: string;
-    role: OrganizationMemberRole;
-}
-export declare enum OrganizationMemberRole {
-    VIEWER = "VIEWER",
-    EDITOR = "EDITOR",
-    ADMIN = "ADMIN",
-    OWNER = "OWNER"
-}
-export declare enum ProjectStatus {
-    IN_PROGRESS = "IN_PROGRESS",
-    FINISHED = "FINISHED"
-}
-export declare enum ProjectAccessType {
-    INTERNAL = "INTERNAL",
-    PRIVATE = "PRIVATE"
-}
-export declare enum ShareGroupType {
-    Public = "public",
-    Private = "private"
-}
-export declare enum EntityType {
-    PointCloud = "clouds",
-    Image = "images",
-    BIM = "bim",
-    Unknown = "unknown"
+    role: string;
 }

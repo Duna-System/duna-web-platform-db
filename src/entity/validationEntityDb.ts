@@ -1,19 +1,18 @@
-import dotenv from 'dotenv';
-import { MongoClient, Db, Collection } from 'mongodb';
+import dotenv from 'dotenv'
+import { MongoClient, Db, Collection } from 'mongodb'
 
-dotenv.config();
-
+dotenv.config()
 
 export async function createEntityCollectionWithValidation(
     uri: string,
     databaseName: string,
     collectionName: string
 ): Promise<void> {
-    const client = new MongoClient(uri);
-    await client.connect();
+    const client = new MongoClient(uri)
+    await client.connect()
 
-    const db: Db = client.db(databaseName);
-    const colecao: Collection = db.collection(collectionName);
+    const db: Db = client.db(databaseName)
+    const colecao: Collection = db.collection(collectionName)
 
     const validationRules = {
         validator: {
@@ -30,7 +29,8 @@ export async function createEntityCollectionWithValidation(
                 properties: {
                     projectId: {
                         bsonType: 'string',
-                        description: 'Project ID must be a string and is required.',
+                        description:
+                            'Project ID must be a string and is required.',
                     },
                     type: {
                         bsonType: 'string',
@@ -42,7 +42,8 @@ export async function createEntityCollectionWithValidation(
                     },
                     location: {
                         bsonType: 'string',
-                        description: 'Location must be a string and is required.',
+                        description:
+                            'Location must be a string and is required.',
                     },
                     sizeMB: {
                         bsonType: 'number',
@@ -50,27 +51,28 @@ export async function createEntityCollectionWithValidation(
                     },
                     shareGroup: {
                         bsonType: 'string',
-                        description: 'Share group must be a string and is required.',
+                        description:
+                            'Share group must be a string and is required.',
                     },
                 },
             },
         },
         validationLevel: 'strict',
         validationAction: 'error',
-    };
+    }
 
-    await colecao.createIndex({ projectId: 1 });
+    await colecao.createIndex({ projectId: 1 })
 
     await db.command({
         collMod: colecao.collectionName,
         validator: validationRules.validator,
         validationLevel: validationRules.validationLevel,
         validationAction: validationRules.validationAction,
-    });
+    })
 
     console.log(
         `Collection ${collectionName} with validation rules created successfully.`
-    );
+    )
 
-    await client.close();
+    await client.close()
 }
