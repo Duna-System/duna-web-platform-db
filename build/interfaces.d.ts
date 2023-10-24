@@ -54,7 +54,7 @@ export interface IProjectDb {
 export interface IOrganizationDb {
     _id: string;
     memberLimit: number;
-    members: string;
+    members: Array<IMemberDb>;
     name: string;
     type: string;
 }
