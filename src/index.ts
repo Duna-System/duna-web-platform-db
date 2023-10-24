@@ -9,6 +9,7 @@ import {
 import { IEntityDb } from './interfaces'
 import { IProjectDb } from './interfaces'
 import { IOrganizationDb } from './interfaces'
+import {IMemberDb} from './interfaces'
 import { entityModel } from './entity/validationEntityModel'
 import { projectModel } from './projects/validationProjectsModel'
 import { organizationModel } from './organizations/validationOrgModel'
@@ -32,4 +33,5 @@ export {
     IProjectDb,
     projectModel,
     IOrganizationDb,
+    IMemberDb
 }
