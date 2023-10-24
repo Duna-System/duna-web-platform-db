@@ -8,8 +8,7 @@ import {
 } from './connection'
 import { IEntityDb } from './interfaces'
 import { IProjectDb } from './interfaces'
-import { IOrganizationDb } from './interfaces'
-import {IMemberDb} from './interfaces'
+import { IOrganization } from './interfaces'
 import { entityModel } from './entity/validationEntityModel'
 import { projectModel } from './projects/validationProjectsModel'
 import { organizationModel } from './organizations/validationOrgModel'
@@ -32,6 +31,5 @@ export {
     IEntityDb,
     IProjectDb,
     projectModel,
-    IOrganizationDb,
-    IMemberDb
+    IOrganization,
 }

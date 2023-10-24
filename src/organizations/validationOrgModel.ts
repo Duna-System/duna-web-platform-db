@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose'
-import { IOrganizationDb } from '../interfaces'
+import { IOrganization } from '../interfaces'
 
-const organizationSchema = new Schema<IOrganizationDb>({
+const organizationSchema = new Schema<IOrganization>({
     _id: { type: String, required: true },
     memberLimit: { type: Number, required: true },
     name: { type: String, required: true },
@@ -15,7 +15,7 @@ const organizationSchema = new Schema<IOrganizationDb>({
     ],
 })
 
-export const organizationModel = model<IOrganizationDb>(
+export const organizationModel = model<IOrganization>(
     'organization',
     organizationSchema
 )
