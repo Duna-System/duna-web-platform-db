@@ -23,7 +23,12 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
-import { IUserDb } from '../interfaces';
+export interface IUserDb {
+    _id: string;
+    name: string;
+    lastName: string;
+    email: string;
+}
 export declare const userModelProjects: import("mongoose").Model<IUserDb, {}, {}, {}, import("mongoose").Document<unknown, {}, IUserDb> & IUserDb & Required<{
     _id: string;
 }>, any>;
