@@ -8,4 +8,4 @@ const userProjectSchema = new mongoose_1.Schema({
     lastName: { type: String, required: true },
     email: { type: String, required: true },
 });
-exports.userModelProjects = (0, mongoose_1.model)('user', userProjectSchema);
+exports.userModelProjects = (0, mongoose_1.model)('userProject', userProjectSchema);
