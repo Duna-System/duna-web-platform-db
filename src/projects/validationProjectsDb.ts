@@ -78,7 +78,7 @@ export async function createProjectCollectionWithValidation(
     });
 
     console.log(
-        `Coleção ${collection_projects} com regras de validação criada com sucesso.`
+        `Collection ${collection_projects} with validation rules created successfully.`
     );
 
     await client.close();

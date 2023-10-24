@@ -53,7 +53,7 @@ export async function createUserProjectCollectionWithValidation(
     })
 
     console.log(
-        `Coleção ${collection_userProject_name} com regras de validação criada com sucesso.`
+        `Coleção ${collection_userProject_name} with validation rules created successfully.`
     )
 
     await client.close()
