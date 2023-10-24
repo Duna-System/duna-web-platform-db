@@ -15,6 +15,12 @@ export interface IUsers extends Document {
     complement: string;
     [key: string]: any;
 }
+export interface IUserDb {
+    _id: string;
+    name: string;
+    lastName: string;
+    email: string;
+}
 export interface IEntityDb {
     _id: string;
     projectId: string;

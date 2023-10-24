@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.projectModel = exports.organizationModel = exports.entityModel = exports.UserModel = exports.createOrganizationCollectionWithValidation = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
+exports.projectModel = exports.organizationModel = exports.entityModel = exports.UserModel = exports.createUserProjectCollectionWithValidation = exports.createOrganizationCollectionWithValidation = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
 const validationDbUsers_1 = require("./users/validationDbUsers");
 Object.defineProperty(exports, "createUserCollectionWithValidation", { enumerable: true, get: function () { return validationDbUsers_1.createUserCollectionWithValidation; } });
 const validationUserModel_1 = require("./users/validationUserModel");
@@ -21,3 +21,5 @@ const validationProjectsDb_1 = require("./projects/validationProjectsDb");
 Object.defineProperty(exports, "createProjectCollectionWithValidation", { enumerable: true, get: function () { return validationProjectsDb_1.createProjectCollectionWithValidation; } });
 const validationOrgDb_1 = require("./organizations/validationOrgDb");
 Object.defineProperty(exports, "createOrganizationCollectionWithValidation", { enumerable: true, get: function () { return validationOrgDb_1.createOrganizationCollectionWithValidation; } });
+const validationDbUsers_2 = require("./userProjects/validationDbUsers");
+Object.defineProperty(exports, "createUserProjectCollectionWithValidation", { enumerable: true, get: function () { return validationDbUsers_2.createUserProjectCollectionWithValidation; } });

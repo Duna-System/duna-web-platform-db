@@ -20,5 +20,5 @@ const UserSchema = new mongoose_1.default.Schema({
     number: { type: String, required: true, default: '' },
     complement: { type: String, default: '' },
 });
-const UserModel = mongoose_1.default.model('User', UserSchema);
+const UserModel = mongoose_1.default.model('user', UserSchema);
 exports.UserModel = UserModel;
