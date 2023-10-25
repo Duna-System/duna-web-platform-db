@@ -47,9 +47,9 @@ export interface IProjectDb {
     createdAt: number;
     modifiedAt: number;
     publicAccessToken: string;
-    status: string;
+    status: ProjectStatus;
     owner?: string;
-    accessType?: string;
+    accessType?: ProjectAccessType;
 }
 export interface IOrganization {
     _id: string;
@@ -67,6 +67,14 @@ export declare enum OrganizationMemberRole {
     EDITOR = "EDITOR",
     ADMIN = "ADMIN",
     OWNER = "OWNER"
+}
+export declare enum ProjectStatus {
+    IN_PROGRESS = "IN_PROGRESS",
+    FINISHED = "FINISHED"
+}
+export declare enum ProjectAccessType {
+    INTERNAL = "INTERNAL",
+    PRIVATE = "PRIVATE"
 }
 export declare enum ShareGroupType {
     Public = "public",
