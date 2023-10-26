@@ -16,5 +16,6 @@ import { deleteUserService } from './users/services/deleteUserService';
 import { getOneUserService } from './users/services/getOneUserService';
 import { getUsersService } from './users/services/getUsersService';
 import { getUserByEmail, verifyPassword } from './users/services/loginService';
+import { EntityService } from './entity/services/EntityService';
 import { updateUser } from './users/services/updateUserService';
-export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents, createEntityCollectionWithValidation, createProjectCollectionWithValidation, createOrganizationCollectionWithValidation, createUserService, deleteUserService, getOneUserService, getUsersService, getUserByEmail, verifyPassword, updateUser, UserModel, entityModel, organizationModel, IUsers, IEntityDb, IProjectDb, projectModel, IOrganization, };
+export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents, createEntityCollectionWithValidation, createProjectCollectionWithValidation, createOrganizationCollectionWithValidation, createUserService, deleteUserService, getOneUserService, getUsersService, getUserByEmail, verifyPassword, updateUser, EntityService, UserModel, entityModel, organizationModel, IUsers, IEntityDb, IProjectDb, projectModel, IOrganization, };
