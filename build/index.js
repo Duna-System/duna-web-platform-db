@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.projectModel = exports.organizationModel = exports.entityModel = exports.UserModel = exports.ProjectService = exports.EntityService = exports.updateUser = exports.verifyPassword = exports.getUserByEmail = exports.getUsersService = exports.getOneUserService = exports.deleteUserService = exports.createOrganizationCollectionWithValidation = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
+exports.projectModel = exports.organizationModel = exports.entityModel = exports.UserModel = exports.ProjectService = exports.EntityService = exports.updateUser = exports.verifyPassword = exports.getUserByEmail = exports.getUsersService = exports.getOneUserService = exports.deleteUserService = exports.createUserService = exports.createOrganizationCollectionWithValidation = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
 const validationDbUsers_1 = require("./users/validationDbUsers");
 Object.defineProperty(exports, "createUserCollectionWithValidation", { enumerable: true, get: function () { return validationDbUsers_1.createUserCollectionWithValidation; } });
 const validationUserModel_1 = require("./users/validationUserModel");
@@ -21,7 +21,8 @@ const validationProjectsDb_1 = require("./projects/validationProjectsDb");
 Object.defineProperty(exports, "createProjectCollectionWithValidation", { enumerable: true, get: function () { return validationProjectsDb_1.createProjectCollectionWithValidation; } });
 const validationOrgDb_1 = require("./organizations/validationOrgDb");
 Object.defineProperty(exports, "createOrganizationCollectionWithValidation", { enumerable: true, get: function () { return validationOrgDb_1.createOrganizationCollectionWithValidation; } });
-// import { createUserService } from './users/services/createUserService'
+const createUserService_1 = require("./users/services/createUserService");
+Object.defineProperty(exports, "createUserService", { enumerable: true, get: function () { return createUserService_1.createUserService; } });
 const deleteUserService_1 = require("./users/services/deleteUserService");
 Object.defineProperty(exports, "deleteUserService", { enumerable: true, get: function () { return deleteUserService_1.deleteUserService; } });
 const getOneUserService_1 = require("./users/services/getOneUserService");
