@@ -3,10 +3,10 @@ import { ErrorMessages, IError } from 'duna-web-platform-error-defs'
 
 export async function connectToDatabase(url: string, databaseName: string) {
     try {
-        await mongoose.connect(`${url}/${databaseName}`, {});
-        console.log(`Conectado ao banco de dados: ${databaseName}`);
+        await mongoose.connect(`${url}/${databaseName}`, {})
+        console.log(`Conectado ao banco de dados: ${databaseName}`)
     } catch (error) {
-        throw error;
+        throw error
     }
 }
 
