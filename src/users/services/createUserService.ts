@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid'
 import { IUsers } from '../../interfaces'
 import { UserModel } from '../validationUserModel'
 
-
 export async function createUserService(user: IUsers): Promise<IUsers> {
     try {
         const hashedPassword = await argon2.hash(user.password)
