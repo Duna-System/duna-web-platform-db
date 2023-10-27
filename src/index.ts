@@ -15,11 +15,9 @@ import { organizationModel } from './organizations/validationOrgModel'
 import { createEntityCollectionWithValidation } from './entity/validationEntityDb'
 import { createProjectCollectionWithValidation } from './projects/validationProjectsDb'
 import { createOrganizationCollectionWithValidation } from './organizations/validationOrgDb'
-import { createUserService } from './users/services/createUserService'
 import { deleteUserService } from './users/services/deleteUserService'
 import { getOneUserService } from './users/services/getOneUserService'
 import { getUsersService } from './users/services/getUsersService'
-import { getUserByEmail, verifyPassword } from './users/services/loginService'
 import { EntityService } from './entity/services/EntityService'
 import { ProjectService } from './projects/services/ProjectService'
 import { updateUser } from './users/services/updateUserService'
@@ -33,12 +31,9 @@ export {
     createEntityCollectionWithValidation,
     createProjectCollectionWithValidation,
     createOrganizationCollectionWithValidation,
-    createUserService,
     deleteUserService,
     getOneUserService,
     getUsersService,
-    getUserByEmail,
-    verifyPassword,
     updateUser,
     OrganizationService,
     EntityService,
