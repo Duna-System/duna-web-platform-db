@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.projectModel = exports.organizationModel = exports.entityModel = exports.UserModel = exports.ProjectService = exports.EntityService = exports.OrganizationService = exports.updateUser = exports.getUsersService = exports.getOneUserService = exports.deleteUserService = exports.createOrganizationCollectionWithValidation = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
+exports.projectModel = exports.organizationModel = exports.entityModel = exports.UserModel = exports.ProjectService = exports.EntityService = exports.OrganizationService = exports.getUsersService = exports.getOneUserService = exports.deleteUserService = exports.createOrganizationCollectionWithValidation = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
 const validationDbUsers_1 = require("./users/validationDbUsers");
 Object.defineProperty(exports, "createUserCollectionWithValidation", { enumerable: true, get: function () { return validationDbUsers_1.createUserCollectionWithValidation; } });
 const validationUserModel_1 = require("./users/validationUserModel");
@@ -31,7 +31,5 @@ const EntityService_1 = require("./entity/services/EntityService");
 Object.defineProperty(exports, "EntityService", { enumerable: true, get: function () { return EntityService_1.EntityService; } });
 const ProjectService_1 = require("./projects/services/ProjectService");
 Object.defineProperty(exports, "ProjectService", { enumerable: true, get: function () { return ProjectService_1.ProjectService; } });
-const updateUserService_1 = require("./users/services/updateUserService");
-Object.defineProperty(exports, "updateUser", { enumerable: true, get: function () { return updateUserService_1.updateUser; } });
 const OrganizationService_1 = require("./organizations/services/OrganizationService");
 Object.defineProperty(exports, "OrganizationService", { enumerable: true, get: function () { return OrganizationService_1.OrganizationService; } });

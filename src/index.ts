@@ -20,7 +20,6 @@ import { getOneUserService } from './users/services/getOneUserService'
 import { getUsersService } from './users/services/getUsersService'
 import { EntityService } from './entity/services/EntityService'
 import { ProjectService } from './projects/services/ProjectService'
-import { updateUser } from './users/services/updateUserService'
 import { OrganizationService } from './organizations/services/OrganizationService'
 
 export {
@@ -34,7 +33,6 @@ export {
     deleteUserService,
     getOneUserService,
     getUsersService,
-    updateUser,
     OrganizationService,
     EntityService,
     ProjectService,
