@@ -32,7 +32,10 @@ class OrganizationService {
         return __awaiter(this, void 0, void 0, function* () {
             //Check if mongoDB is connected
             (0, connection_1.checkConnectionStatus)();
-            const organization_record = yield this.model.findById(organization_id).lean().exec();
+            const organization_record = yield this.model
+                .findById(organization_id)
+                .lean()
+                .exec();
             if (!organization_record) {
                 const err = duna_web_platform_error_defs_1.ErrorMessages.OrganizationDoesNotExist;
                 err.Details = `Organization '${organization_id}' not found'`;
@@ -47,7 +50,11 @@ class OrganizationService {
             (0, connection_1.checkConnectionStatus)();
             const organization_record = yield this.model
                 .findById(organization_id)
-                .populate({ path: 'members.user', model: validationUserModel_1.UserModel, select: '_id name lastName email' })
+                .populate({
+                path: 'members.user',
+                model: validationUserModel_1.UserModel,
+                select: '_id name lastName email',
+            })
                 .lean()
                 .exec();
             if (!organization_record) {
@@ -90,7 +97,8 @@ class OrganizationService {
         return __awaiter(this, void 0, void 0, function* () {
             //Check if mongoDB is connected
             (0, connection_1.checkConnectionStatus)();
-            const exists = (yield this.model.exists({ _id: organization_id }).lean().exec()) != null;
+            const exists = (yield this.model.exists({ _id: organization_id }).lean().exec()) !=
+                null;
             return exists;
         });
     }
