@@ -40,7 +40,6 @@ export {
     getUserByEmail,
     verifyPassword,
     updateUser,
-
     OrganizationService,
     EntityService,
     ProjectService,
