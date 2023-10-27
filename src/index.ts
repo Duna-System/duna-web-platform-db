@@ -23,6 +23,7 @@ import { getUserByEmail, verifyPassword } from './users/services/loginService'
 import { EntityService } from './entity/services/EntityService'
 import { ProjectService } from './projects/services/ProjectService'
 import { updateUser } from './users/services/updateUserService'
+import { OrganizationService } from './organizations/services/OrganizationService'
 
 export {
     createUserCollectionWithValidation,
@@ -39,6 +40,8 @@ export {
     getUserByEmail,
     verifyPassword,
     updateUser,
+
+    OrganizationService,
     EntityService,
     ProjectService,
     UserModel,

@@ -19,4 +19,5 @@ import { getUserByEmail, verifyPassword } from './users/services/loginService';
 import { EntityService } from './entity/services/EntityService';
 import { ProjectService } from './projects/services/ProjectService';
 import { updateUser } from './users/services/updateUserService';
-export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents, createEntityCollectionWithValidation, createProjectCollectionWithValidation, createOrganizationCollectionWithValidation, createUserService, deleteUserService, getOneUserService, getUsersService, getUserByEmail, verifyPassword, updateUser, EntityService, ProjectService, UserModel, entityModel, organizationModel, IUsers, IEntityDb, IProjectDb, projectModel, IOrganization, };
+import { OrganizationService } from './organizations/services/OrganizationService';
+export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents, createEntityCollectionWithValidation, createProjectCollectionWithValidation, createOrganizationCollectionWithValidation, createUserService, deleteUserService, getOneUserService, getUsersService, getUserByEmail, verifyPassword, updateUser, OrganizationService, EntityService, ProjectService, UserModel, entityModel, organizationModel, IUsers, IEntityDb, IProjectDb, projectModel, IOrganization, };
