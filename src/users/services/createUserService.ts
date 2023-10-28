@@ -17,7 +17,7 @@ export async function createUserService(user: IUsers): Promise<IUsers> {
             name: user.name,
             lastName: user.lastName,
             email: user.email,
-            password: user.password, // Assuming the password is already hashed in the controller
+            password: user.password,
             actingField: user.actingField,
             phoneNumber: user.phoneNumber,
             postalCode: user.postalCode,
