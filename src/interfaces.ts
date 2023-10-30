@@ -1,4 +1,4 @@
-export interface IUsers extends Document {
+export interface IUsers {
     _id: string
     name: string
     lastName: string
