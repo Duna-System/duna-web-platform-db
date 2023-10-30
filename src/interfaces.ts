@@ -55,13 +55,13 @@ export interface IProjectDb {
 export interface IOrganizationDb {
     _id: string
     memberLimit: number
-    members: string
+    members: Array<IMemberDb>
     name: string
     type: string
 }
 export interface IMemberDb {
     user: string
-    role: string
+    role: OrganizationMemberRole
 }
 export interface IUser {
     _id: string

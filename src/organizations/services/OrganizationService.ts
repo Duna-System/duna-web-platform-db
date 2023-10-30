@@ -8,7 +8,9 @@ export class OrganizationService {
     protected model = organizationModel
     protected configure() {}
 
-    public async insert(organization: IOrganizationDb): Promise<IOrganizationDb> {
+    public async insert(
+        organization: IOrganizationDb
+    ): Promise<IOrganizationDb> {
         //Check if mongoDB is connected
         checkConnectionStatus()
 
@@ -36,7 +38,9 @@ export class OrganizationService {
         return organization_record
     }
 
-    public async getPopulated(organization_id: string): Promise<IOrganizationDb> {
+    public async getPopulated(
+        organization_id: string
+    ): Promise<IOrganizationDb> {
         //Check if mongoDB is connected
         checkConnectionStatus()
 
@@ -59,7 +63,9 @@ export class OrganizationService {
         return organization_record
     }
 
-    public async update(organization: IOrganizationDb): Promise<IOrganizationDb> {
+    public async update(
+        organization: IOrganizationDb
+    ): Promise<IOrganizationDb> {
         //Check if mongoDB is connected
         checkConnectionStatus()
 
