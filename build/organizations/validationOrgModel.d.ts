@@ -23,7 +23,7 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
-import { IOrganization } from '../interfaces';
-export declare const organizationModel: import("mongoose").Model<IOrganization, {}, {}, {}, import("mongoose").Document<unknown, {}, IOrganization> & IOrganization & Required<{
+import { IOrganizationDb } from '../interfaces';
+export declare const organizationModel: import("mongoose").Model<IOrganizationDb, {}, {}, {}, import("mongoose").Document<unknown, {}, IOrganizationDb> & IOrganizationDb & Required<{
     _id: string;
 }>, any>;

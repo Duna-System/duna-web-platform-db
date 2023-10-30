@@ -23,17 +23,17 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
-import { IOrganization } from '../../interfaces';
+import { IOrganizationDb } from '../../interfaces';
 export declare class OrganizationService {
-    protected model: import("mongoose").Model<IOrganization, {}, {}, {}, import("mongoose").Document<unknown, {}, IOrganization> & IOrganization & Required<{
+    protected model: import("mongoose").Model<IOrganizationDb, {}, {}, {}, import("mongoose").Document<unknown, {}, IOrganizationDb> & IOrganizationDb & Required<{
         _id: string;
     }>, any>;
     protected configure(): void;
-    insert(organization: IOrganization): Promise<IOrganization>;
-    get(organization_id: string): Promise<IOrganization>;
-    getPopulated(organization_id: string): Promise<IOrganization>;
-    update(organization: IOrganization): Promise<IOrganization>;
+    insert(organization: IOrganizationDb): Promise<IOrganizationDb>;
+    get(organization_id: string): Promise<IOrganizationDb>;
+    getPopulated(organization_id: string): Promise<IOrganizationDb>;
+    update(organization: IOrganizationDb): Promise<IOrganizationDb>;
     remove(organization_id: string): Promise<void>;
     exists(organization_id: string): Promise<boolean>;
-    listAllFromUser(user_id: string): Promise<Array<IOrganization>>;
+    listAllFromUser(user_id: string): Promise<Array<IOrganizationDb>>;
 }

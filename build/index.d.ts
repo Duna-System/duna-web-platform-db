@@ -1,10 +1,10 @@
 import { createUserCollectionWithValidation } from './users/validationDbUsers';
 import { UserModel } from './users/validationUserModel';
-import { IUser, IUsers } from './interfaces';
+import { IMemberDb, IUser, IUsers } from './interfaces';
 import { connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents } from './connection';
 import { IEntityDb } from './interfaces';
 import { IProjectDb } from './interfaces';
-import { IOrganization } from './interfaces';
+import { IOrganizationDb } from './interfaces';
 import { entityModel } from './entity/validationEntityModel';
 import { projectModel } from './projects/validationProjectsModel';
 import { organizationModel } from './organizations/validationOrgModel';
@@ -21,4 +21,4 @@ import { ProjectService } from './projects/services/ProjectService';
 import { OrganizationService } from './organizations/services/OrganizationService';
 import { updateUserService } from './users/services/updateUserService';
 import { UserService } from './usersProject/UserService';
-export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents, createEntityCollectionWithValidation, createProjectCollectionWithValidation, createOrganizationCollectionWithValidation, deleteUserService, getOneUserService, getUsersService, createUserService, updateUserService, getUserByEmail, UserService, OrganizationService, EntityService, ProjectService, UserModel, entityModel, organizationModel, IUsers, IUser, IEntityDb, IProjectDb, projectModel, IOrganization, };
+export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents, createEntityCollectionWithValidation, createProjectCollectionWithValidation, createOrganizationCollectionWithValidation, deleteUserService, getOneUserService, getUsersService, createUserService, updateUserService, getUserByEmail, UserService, OrganizationService, EntityService, ProjectService, UserModel, entityModel, organizationModel, IUsers, IUser, IEntityDb, IProjectDb, projectModel, IOrganizationDb, IMemberDb, };

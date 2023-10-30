@@ -1,5 +1,5 @@
 import { ErrorMessages } from 'duna-web-platform-error-defs'
-import { IOrganization } from '../../interfaces'
+import { IOrganizationDb } from '../../interfaces'
 import { checkConnectionStatus } from '../../connection'
 import { organizationModel } from '../validationOrgModel'
 import { UserModel } from '../../users/validationUserModel'
@@ -8,17 +8,17 @@ export class OrganizationService {
     protected model = organizationModel
     protected configure() {}
 
-    public async insert(organization: IOrganization): Promise<IOrganization> {
+    public async insert(organization: IOrganizationDb): Promise<IOrganizationDb> {
         //Check if mongoDB is connected
         checkConnectionStatus()
 
         const organization_record = new this.model(organization)
         await organization_record.save()
 
-        return organization_record.toJSON<IOrganization>()
+        return organization_record.toJSON<IOrganizationDb>()
     }
 
-    public async get(organization_id: string): Promise<IOrganization> {
+    public async get(organization_id: string): Promise<IOrganizationDb> {
         //Check if mongoDB is connected
         checkConnectionStatus()
 
@@ -36,7 +36,7 @@ export class OrganizationService {
         return organization_record
     }
 
-    public async getPopulated(organization_id: string): Promise<IOrganization> {
+    public async getPopulated(organization_id: string): Promise<IOrganizationDb> {
         //Check if mongoDB is connected
         checkConnectionStatus()
 
@@ -59,7 +59,7 @@ export class OrganizationService {
         return organization_record
     }
 
-    public async update(organization: IOrganization): Promise<IOrganization> {
+    public async update(organization: IOrganizationDb): Promise<IOrganizationDb> {
         //Check if mongoDB is connected
         checkConnectionStatus()
 
@@ -77,7 +77,7 @@ export class OrganizationService {
             throw err
         }
 
-        return organization_record.toJSON<IOrganization>()
+        return organization_record.toJSON<IOrganizationDb>()
     }
 
     public async remove(organization_id: string) {
@@ -106,7 +106,7 @@ export class OrganizationService {
 
     public async listAllFromUser(
         user_id: string
-    ): Promise<Array<IOrganization>> {
+    ): Promise<Array<IOrganizationDb>> {
         //Check if mongoDB is connected
         checkConnectionStatus()
 

@@ -51,16 +51,16 @@ export interface IProjectDb {
     owner?: string;
     accessType?: ProjectAccessType;
 }
-export interface IOrganization {
+export interface IOrganizationDb {
     _id: string;
     memberLimit: number;
-    members: Array<IMember>;
+    members: string;
     name: string;
     type: string;
 }
-export interface IMember {
+export interface IMemberDb {
     user: string;
-    role: OrganizationMemberRole;
+    role: string;
 }
 export interface IUser {
     _id: string;

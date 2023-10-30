@@ -1,6 +1,6 @@
 import { createUserCollectionWithValidation } from './users/validationDbUsers'
 import { UserModel } from './users/validationUserModel'
-import { IUser, IUsers } from './interfaces'
+import { IMemberDb, IUser, IUsers } from './interfaces'
 import {
     connectToDatabase,
     checkConnectionStatus,
@@ -8,7 +8,7 @@ import {
 } from './connection'
 import { IEntityDb } from './interfaces'
 import { IProjectDb } from './interfaces'
-import { IOrganization } from './interfaces'
+import { IOrganizationDb } from './interfaces'
 import { entityModel } from './entity/validationEntityModel'
 import { projectModel } from './projects/validationProjectsModel'
 import { organizationModel } from './organizations/validationOrgModel'
@@ -52,5 +52,6 @@ export {
     IEntityDb,
     IProjectDb,
     projectModel,
-    IOrganization,
+    IOrganizationDb,
+    IMemberDb,
 }
