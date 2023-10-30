@@ -64,11 +64,11 @@ export interface IMember {
     role: OrganizationMemberRole
 }
 export interface IUser {
-    _id: string;
-    name: string;
-    lastName: string;
-    email: string;
-  }
+    _id: string
+    name: string
+    lastName: string
+    email: string
+}
 
 export enum OrganizationMemberRole {
     VIEWER = 'VIEWER',

@@ -62,6 +62,12 @@ export interface IMember {
     user: string;
     role: OrganizationMemberRole;
 }
+export interface IUser {
+    _id: string;
+    name: string;
+    lastName: string;
+    email: string;
+}
 export declare enum OrganizationMemberRole {
     VIEWER = "VIEWER",
     EDITOR = "EDITOR",
