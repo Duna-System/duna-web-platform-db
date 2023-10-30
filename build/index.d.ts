@@ -1,6 +1,6 @@
 import { createUserCollectionWithValidation } from './users/validationDbUsers';
 import { UserModel } from './users/validationUserModel';
-import { IUsers } from './interfaces';
+import { IUser, IUsers } from './interfaces';
 import { connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents } from './connection';
 import { IEntityDb } from './interfaces';
 import { IProjectDb } from './interfaces';
@@ -20,4 +20,5 @@ import { EntityService } from './entity/services/EntityService';
 import { ProjectService } from './projects/services/ProjectService';
 import { OrganizationService } from './organizations/services/OrganizationService';
 import { updateUserService } from './users/services/updateUserService';
-export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents, createEntityCollectionWithValidation, createProjectCollectionWithValidation, createOrganizationCollectionWithValidation, deleteUserService, getOneUserService, getUsersService, createUserService, updateUserService, getUserByEmail, OrganizationService, EntityService, ProjectService, UserModel, entityModel, organizationModel, IUsers, IEntityDb, IProjectDb, projectModel, IOrganization, };
+import { UserService } from './usersProject/UserService';
+export { createUserCollectionWithValidation, connectToDatabase, checkConnectionStatus, subscribeToDatabaseEvents, createEntityCollectionWithValidation, createProjectCollectionWithValidation, createOrganizationCollectionWithValidation, deleteUserService, getOneUserService, getUsersService, createUserService, updateUserService, getUserByEmail, UserService, OrganizationService, EntityService, ProjectService, UserModel, entityModel, organizationModel, IUsers, IUser, IEntityDb, IProjectDb, projectModel, IOrganization, };

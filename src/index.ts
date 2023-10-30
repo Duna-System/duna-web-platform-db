@@ -1,6 +1,6 @@
 import { createUserCollectionWithValidation } from './users/validationDbUsers'
 import { UserModel } from './users/validationUserModel'
-import { IUsers } from './interfaces'
+import { IUser, IUsers } from './interfaces'
 import {
     connectToDatabase,
     checkConnectionStatus,
@@ -24,6 +24,7 @@ import { EntityService } from './entity/services/EntityService'
 import { ProjectService } from './projects/services/ProjectService'
 import { OrganizationService } from './organizations/services/OrganizationService'
 import { updateUserService } from './users/services/updateUserService'
+import { UserService } from './usersProject/UserService'
 
 export {
     createUserCollectionWithValidation,
@@ -39,6 +40,7 @@ export {
     createUserService,
     updateUserService,
     getUserByEmail,
+    UserService,
     OrganizationService,
     EntityService,
     ProjectService,
@@ -46,6 +48,7 @@ export {
     entityModel,
     organizationModel,
     IUsers,
+    IUser,
     IEntityDb,
     IProjectDb,
     projectModel,

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.projectModel = exports.organizationModel = exports.entityModel = exports.UserModel = exports.ProjectService = exports.EntityService = exports.OrganizationService = exports.getUserByEmail = exports.updateUserService = exports.createUserService = exports.getUsersService = exports.getOneUserService = exports.deleteUserService = exports.createOrganizationCollectionWithValidation = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
+exports.projectModel = exports.organizationModel = exports.entityModel = exports.UserModel = exports.ProjectService = exports.EntityService = exports.OrganizationService = exports.UserService = exports.getUserByEmail = exports.updateUserService = exports.createUserService = exports.getUsersService = exports.getOneUserService = exports.deleteUserService = exports.createOrganizationCollectionWithValidation = exports.createProjectCollectionWithValidation = exports.createEntityCollectionWithValidation = exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = exports.createUserCollectionWithValidation = void 0;
 const validationDbUsers_1 = require("./users/validationDbUsers");
 Object.defineProperty(exports, "createUserCollectionWithValidation", { enumerable: true, get: function () { return validationDbUsers_1.createUserCollectionWithValidation; } });
 const validationUserModel_1 = require("./users/validationUserModel");
@@ -39,3 +39,5 @@ const OrganizationService_1 = require("./organizations/services/OrganizationServ
 Object.defineProperty(exports, "OrganizationService", { enumerable: true, get: function () { return OrganizationService_1.OrganizationService; } });
 const updateUserService_1 = require("./users/services/updateUserService");
 Object.defineProperty(exports, "updateUserService", { enumerable: true, get: function () { return updateUserService_1.updateUserService; } });
+const UserService_1 = require("./usersProject/UserService");
+Object.defineProperty(exports, "UserService", { enumerable: true, get: function () { return UserService_1.UserService; } });
