@@ -39,4 +39,10 @@ export declare class EntityService {
     existsWithName(project_id: string, entity_name: string): Promise<boolean>;
     listAllFromProject(project_id: string): Promise<IEntityDb[]>;
     assignParentName(project_id: string, entity_name: string, parent_entity_name: string): Promise<void>;
+    /**
+     * Promote entity
+     * @param project_id
+     * @param entity_name
+     */
+    promoteEntity(project_id: string, entity_name: string): Promise<void>;
 }

@@ -144,4 +144,25 @@ export class EntityService {
 
         this.update(child_entity)
     }
+    /**
+     * Promote entity
+     * @param project_id
+     * @param entity_name
+     */
+    public async promoteEntity(project_id: string, entity_name: string) {
+        // Check if entity exist.
+        const child_entity = await this.getByName(project_id, entity_name)
+
+        if (child_entity.parentName === undefined)
+        {
+            const err:IError = ErrorMessages.InternalServerError;
+            err.Details = 'Entity is not a chilld, or does not have parent property.'
+            throw err;
+        }
+
+        const entity = await this.model.findOne({ projectId: project_id, name: entity_name });
+
+        entity!.parentName = undefined;
+        await entity!.save();
+    }
 }

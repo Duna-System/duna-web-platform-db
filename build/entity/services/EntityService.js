@@ -135,5 +135,24 @@ class EntityService {
             this.update(child_entity);
         });
     }
+    /**
+     * Promote entity
+     * @param project_id
+     * @param entity_name
+     */
+    promoteEntity(project_id, entity_name) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // Check if entity exist.
+            const child_entity = yield this.getByName(project_id, entity_name);
+            if (child_entity.parentName === undefined) {
+                const err = duna_web_platform_error_defs_1.ErrorMessages.InternalServerError;
+                err.Details = 'Entity is not a chilld, or does not have parent property.';
+                throw err;
+            }
+            const entity = yield this.model.findOne({ projectId: project_id, name: entity_name });
+            entity.parentName = undefined;
+            yield entity.save();
+        });
+    }
 }
 exports.EntityService = EntityService;
