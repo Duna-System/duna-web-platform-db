@@ -1,4 +1,4 @@
-import { ErrorMessages } from 'duna-web-platform-error-defs'
+import { ErrorMessages, IError } from 'duna-web-platform-error-defs'
 import { checkConnectionStatus } from '../../connection'
 import { entityModel } from '../validationEntityModel'
 import { IEntityDb } from '../../interfaces'
@@ -122,5 +122,26 @@ export class EntityService {
             .lean()
             .exec()
         return entities
+    }
+
+    public async assignParentName(
+        project_id: string,
+        entity_name: string,
+        parent_entity_name: string
+    ) {
+        // Check if entity exist.
+        const child_entity = await this.getByName(project_id, entity_name)
+
+        if (!(await this.existsWithName(project_id, parent_entity_name))) {
+            {
+                const err: IError = ErrorMessages.EntityDoesNotExist
+                err.Details = `Parent Name: ${parent_entity_name}`
+                throw err
+            }
+        }
+
+        child_entity.parentName = parent_entity_name
+
+        this.update(child_entity)
     }
 }

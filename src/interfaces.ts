@@ -24,6 +24,7 @@ export interface IEntityDb {
     location: string
     sizeMB: number
     shareGroup: ShareGroupType
+    parentName?: string
 }
 export interface QuotaInfo {
     pointCloudQuotaMB: number

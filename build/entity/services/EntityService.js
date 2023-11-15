@@ -120,5 +120,20 @@ class EntityService {
             return entities;
         });
     }
+    assignParentName(project_id, entity_name, parent_entity_name) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // Check if entity exist.
+            const child_entity = yield this.getByName(project_id, entity_name);
+            if (!(yield this.existsWithName(project_id, parent_entity_name))) {
+                {
+                    const err = duna_web_platform_error_defs_1.ErrorMessages.EntityDoesNotExist;
+                    err.Details = `Parent Name: ${parent_entity_name}`;
+                    throw err;
+                }
+            }
+            child_entity.parentName = parent_entity_name;
+            this.update(child_entity);
+        });
+    }
 }
 exports.EntityService = EntityService;
