@@ -153,16 +153,19 @@ export class EntityService {
         // Check if entity exist.
         const child_entity = await this.getByName(project_id, entity_name)
 
-        if (child_entity.parentName === undefined)
-        {
-            const err:IError = ErrorMessages.InternalServerError;
-            err.Details = 'Entity is not a chilld, or does not have parent property.'
-            throw err;
+        if (child_entity.parentName === undefined) {
+            const err: IError = ErrorMessages.InternalServerError
+            err.Details =
+                'Entity is not a chilld, or does not have parent property.'
+            throw err
         }
 
-        const entity = await this.model.findOne({ projectId: project_id, name: entity_name });
+        const entity = await this.model.findOne({
+            projectId: project_id,
+            name: entity_name,
+        })
 
-        entity!.parentName = undefined;
-        await entity!.save();
+        entity!.parentName = undefined
+        await entity!.save()
     }
 }
