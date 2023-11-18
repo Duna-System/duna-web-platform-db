@@ -124,6 +124,15 @@ export class EntityService {
         return entities
     }
 
+    /**
+     * Assign a parent entity to another entity. This essentially
+     * makes them a `child` entity. Child entities are not allowed
+     * to be processed. (business logic)
+     *
+     * @param project_id
+     * @param entity_name
+     * @param parent_entity_name
+     */
     public async assignParentName(
         project_id: string,
         entity_name: string,
@@ -145,7 +154,8 @@ export class EntityService {
         this.update(child_entity)
     }
     /**
-     * Promote entity
+     * Promote entity. Removes the parent field and allows them to be processed
+     * (business logic)
      * @param project_id
      * @param entity_name
      */
@@ -165,6 +175,7 @@ export class EntityService {
             name: entity_name,
         })
 
+        // Assigning document properties to undefined removes them.
         entity!.parentName = undefined
         await entity!.save()
     }

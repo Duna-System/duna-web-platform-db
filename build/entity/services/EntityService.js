@@ -120,6 +120,15 @@ class EntityService {
             return entities;
         });
     }
+    /**
+     * Assign a parent entity to another entity. This essentially
+     * makes them a `child` entity. Child entities are not allowed
+     * to be processed. (business logic)
+     *
+     * @param project_id
+     * @param entity_name
+     * @param parent_entity_name
+     */
     assignParentName(project_id, entity_name, parent_entity_name) {
         return __awaiter(this, void 0, void 0, function* () {
             // Check if entity exist.
@@ -136,7 +145,8 @@ class EntityService {
         });
     }
     /**
-     * Promote entity
+     * Promote entity. Removes the parent field and allows them to be processed
+     * (business logic)
      * @param project_id
      * @param entity_name
      */
@@ -154,6 +164,7 @@ class EntityService {
                 projectId: project_id,
                 name: entity_name,
             });
+            // Assigning document properties to undefined removes them.
             entity.parentName = undefined;
             yield entity.save();
         });

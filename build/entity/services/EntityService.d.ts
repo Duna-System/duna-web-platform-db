@@ -38,9 +38,19 @@ export declare class EntityService {
     exists(entity_id: string): Promise<boolean>;
     existsWithName(project_id: string, entity_name: string): Promise<boolean>;
     listAllFromProject(project_id: string): Promise<IEntityDb[]>;
+    /**
+     * Assign a parent entity to another entity. This essentially
+     * makes them a `child` entity. Child entities are not allowed
+     * to be processed. (business logic)
+     *
+     * @param project_id
+     * @param entity_name
+     * @param parent_entity_name
+     */
     assignParentName(project_id: string, entity_name: string, parent_entity_name: string): Promise<void>;
     /**
-     * Promote entity
+     * Promote entity. Removes the parent field and allows them to be processed
+     * (business logic)
      * @param project_id
      * @param entity_name
      */
