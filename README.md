@@ -16,6 +16,9 @@ To install a specific branch, use
 
 `npm install https://github.com/Duna-System/duna-web-platform-db.git#branch-name`.
 
+It is also possible to install a local branch by setting the corresponding package PATH to the
+`build` folder of the dependency and call `npm install`.
+
 Then include the error definitions. Example:
 
 -   `import {  connectToDatabase } from 'duna-web-platform-db`
