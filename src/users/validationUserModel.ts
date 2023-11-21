@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema<IUsers>({
     street: { type: String, required: true, default: '' },
     number: { type: String, required: true, default: '' },
     complement: { type: String, default: '' },
-    emailValidade: { type: Boolean, default: false },
+    validateEmail: { type: Boolean, default: false },
 })
 
 const UserModel: Model<IUsers> = mongoose.model<IUsers>('user', UserSchema)
