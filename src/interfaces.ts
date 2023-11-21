@@ -13,7 +13,7 @@ export interface IUsers {
     street: string
     number: string
     complement: string
-    validateEmail: boolean
+    validatedMail: boolean
     [key: string]: any
 }
 
