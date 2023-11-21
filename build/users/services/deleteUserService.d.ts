@@ -23,6 +23,6 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
-export declare function deleteUserService(userId: string): Promise<import("mongoose").Document<unknown, {}, import("../..").IUsers> & import("../..").IUsers & Required<{
+export declare function deleteUserService(userId: string): Promise<(import("mongoose").Document<unknown, {}, import("../..").IUsers> & import("../..").IUsers & Required<{
     _id: string;
-}>>;
+}>) | null>;

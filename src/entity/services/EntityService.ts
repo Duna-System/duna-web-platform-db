@@ -1,4 +1,4 @@
-import { ErrorMessages } from 'duna-web-platform-error-defs'
+import { ErrorMessages, IError } from 'duna-web-platform-error-defs'
 import { checkConnectionStatus } from '../../connection'
 import { entityModel } from '../validationEntityModel'
 import { IEntityDb } from '../../interfaces'
@@ -122,5 +122,61 @@ export class EntityService {
             .lean()
             .exec()
         return entities
+    }
+
+    /**
+     * Assign a parent entity to another entity. This essentially
+     * makes them a `child` entity. Child entities are not allowed
+     * to be processed. (business logic)
+     *
+     * @param project_id
+     * @param entity_name
+     * @param parent_entity_name
+     */
+    public async assignParentName(
+        project_id: string,
+        entity_name: string,
+        parent_entity_name: string
+    ) {
+        // Check if entity exist.
+        const child_entity = await this.getByName(project_id, entity_name)
+
+        if (!(await this.existsWithName(project_id, parent_entity_name))) {
+            {
+                const err: IError = ErrorMessages.EntityDoesNotExist
+                err.Details = `Parent Name: ${parent_entity_name}`
+                throw err
+            }
+        }
+
+        child_entity.parentName = parent_entity_name
+
+        this.update(child_entity)
+    }
+    /**
+     * Promote entity. Removes the parent field and allows them to be processed
+     * (business logic)
+     * @param project_id
+     * @param entity_name
+     */
+    public async promoteEntity(project_id: string, entity_name: string) {
+        // Check if entity exist.
+        const child_entity = await this.getByName(project_id, entity_name)
+
+        if (child_entity.parentName === undefined) {
+            const err: IError = ErrorMessages.InternalServerError
+            err.Details =
+                'Entity is not a chilld, or does not have parent property.'
+            throw err
+        }
+
+        const entity = await this.model.findOne({
+            projectId: project_id,
+            name: entity_name,
+        })
+
+        // Assigning document properties to undefined removes them.
+        entity!.parentName = undefined
+        await entity!.save()
     }
 }

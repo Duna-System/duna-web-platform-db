@@ -59,6 +59,10 @@ function createEntityCollectionWithValidation(uri, databaseName, collectionName)
                             bsonType: 'string',
                             description: 'Share group must be a string and is required.',
                         },
+                        parentName: {
+                            bsonType: 'string',
+                            description: 'Holds a name reference to a parent entity. Not required.',
+                        },
                     },
                 },
             },

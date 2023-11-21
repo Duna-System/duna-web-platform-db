@@ -120,5 +120,54 @@ class EntityService {
             return entities;
         });
     }
+    /**
+     * Assign a parent entity to another entity. This essentially
+     * makes them a `child` entity. Child entities are not allowed
+     * to be processed. (business logic)
+     *
+     * @param project_id
+     * @param entity_name
+     * @param parent_entity_name
+     */
+    assignParentName(project_id, entity_name, parent_entity_name) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // Check if entity exist.
+            const child_entity = yield this.getByName(project_id, entity_name);
+            if (!(yield this.existsWithName(project_id, parent_entity_name))) {
+                {
+                    const err = duna_web_platform_error_defs_1.ErrorMessages.EntityDoesNotExist;
+                    err.Details = `Parent Name: ${parent_entity_name}`;
+                    throw err;
+                }
+            }
+            child_entity.parentName = parent_entity_name;
+            this.update(child_entity);
+        });
+    }
+    /**
+     * Promote entity. Removes the parent field and allows them to be processed
+     * (business logic)
+     * @param project_id
+     * @param entity_name
+     */
+    promoteEntity(project_id, entity_name) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // Check if entity exist.
+            const child_entity = yield this.getByName(project_id, entity_name);
+            if (child_entity.parentName === undefined) {
+                const err = duna_web_platform_error_defs_1.ErrorMessages.InternalServerError;
+                err.Details =
+                    'Entity is not a chilld, or does not have parent property.';
+                throw err;
+            }
+            const entity = yield this.model.findOne({
+                projectId: project_id,
+                name: entity_name,
+            });
+            // Assigning document properties to undefined removes them.
+            entity.parentName = undefined;
+            yield entity.save();
+        });
+    }
 }
 exports.EntityService = EntityService;
