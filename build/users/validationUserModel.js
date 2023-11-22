@@ -19,6 +19,7 @@ const UserSchema = new mongoose_1.default.Schema({
     street: { type: String, required: true, default: '' },
     number: { type: String, required: true, default: '' },
     complement: { type: String, default: '' },
+    validatedMail: { type: Boolean, required: true, default: false },
 });
 const UserModel = mongoose_1.default.model('user', UserSchema);
 exports.UserModel = UserModel;
