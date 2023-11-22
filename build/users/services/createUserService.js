@@ -35,6 +35,14 @@ function createUserService(user) {
                 street: user.street,
                 number: user.number,
                 complement: user.complement,
+                quota: {
+                    BIMSizeQuotaMB: 5000,
+                    pointCloudQuotaMB: 5000,
+                    imageSizeQuotaMB: 5000,
+                    BIMUsedMB: 0,
+                    imageUsedMB: 0,
+                    pointCloudUsedMB: 0,
+                },
             });
             const savedUser = yield newUser.save();
             return savedUser;

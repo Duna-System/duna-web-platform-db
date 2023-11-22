@@ -26,6 +26,7 @@ export async function updateUserService(
         if (updates.street) existingUser.street = updates.street
         if (updates.number) existingUser.number = updates.number
         if (updates.complement) existingUser.complement = updates.complement
+        if (updates.quota) existingUser.quota = updates.quota
 
         await existingUser.save()
 

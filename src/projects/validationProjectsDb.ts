@@ -25,7 +25,6 @@ export async function createProjectCollectionWithValidation(
                     'clientName',
                     'type',
                     'favorite',
-                    'quota',
                     'clouds',
                     'images',
                     'bim',
@@ -58,47 +57,6 @@ export async function createProjectCollectionWithValidation(
                     favorite: {
                         bsonType: 'bool',
                         description: 'Indicador de favorito (boolean)',
-                    },
-                    quota: {
-                        bsonType: 'object',
-                        required: [
-                            'pointCloudQuotaMB',
-                            'imageSizeQuotaMB',
-                            'BIMSizeQuotaMB',
-                            'pointCloudUsedMB',
-                            'imageUsedMB',
-                            'BIMUsedMB',
-                        ],
-                        properties: {
-                            pointCloudQuotaMB: {
-                                bsonType: 'number',
-                                description:
-                                    'Quota para nuvem de pontos (number)',
-                            },
-                            imageSizeQuotaMB: {
-                                bsonType: 'number',
-                                description:
-                                    'Quota para tamanho da imagem (number)',
-                            },
-                            BIMSizeQuotaMB: {
-                                bsonType: 'number',
-                                description:
-                                    'Quota para tamanho do BIM (number)',
-                            },
-                            pointCloudUsedMB: {
-                                bsonType: 'number',
-                                description: 'Uso de nuvem de pontos (number)',
-                            },
-                            imageUsedMB: {
-                                bsonType: 'number',
-                                description:
-                                    'Uso de tamanho da imagem (number)',
-                            },
-                            BIMUsedMB: {
-                                bsonType: 'number',
-                                description: 'Uso de tamanho do BIM (number)',
-                            },
-                        },
                     },
                     clouds: {
                         bsonType: 'array',
