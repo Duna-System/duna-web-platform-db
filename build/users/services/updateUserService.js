@@ -43,6 +43,8 @@ function updateUserService(userId, updates) {
                 existingUser.number = updates.number;
             if (updates.complement)
                 existingUser.complement = updates.complement;
+            if (updates.quota)
+                existingUser.quota = updates.quota;
             yield existingUser.save();
             return existingUser;
         }

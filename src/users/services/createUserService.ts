@@ -26,6 +26,14 @@ export async function createUserService(user: IUsers): Promise<IUsers> {
             street: user.street,
             number: user.number,
             complement: user.complement,
+            quota: {
+                BIMSizeQuotaMB: 5000,
+                pointCloudQuotaMB: 5000,
+                imageSizeQuotaMB: 5000,
+                BIMUsedMB: 0,
+                imageUsedMB: 0,
+                pointCloudUsedMB: 0,
+            },
         })
 
         const savedUser = await newUser.save()

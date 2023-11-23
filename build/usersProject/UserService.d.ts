@@ -30,4 +30,5 @@ export declare class UserService {
     }>, any>;
     protected configure(): void;
     get(user_id?: string, email?: string): Promise<IUsers>;
+    update(user: IUsers): Promise<IUsers>;
 }

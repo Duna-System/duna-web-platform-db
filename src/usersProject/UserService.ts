@@ -27,4 +27,21 @@ export class UserService {
 
         return user
     }
+
+    public async update(user: IUsers): Promise<IUsers> {
+        //Check if mongoDB is connected
+        checkConnectionStatus()
+
+        const user_record = await this.model.findByIdAndUpdate(user._id, user, {
+            new: true,
+        })
+
+        if (!user_record) {
+            const err = ErrorMessages.UserNotFound
+            err.Details = `User '${user._id}' not found'`
+            throw err
+        }
+
+        return user_record.toJSON<IUsers>()
+    }
 }

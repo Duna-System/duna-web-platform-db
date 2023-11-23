@@ -25,6 +25,7 @@ export async function createUserCollectionWithValidation(
                     'postalCode',
                     'street',
                     'number',
+                    'quota',
                 ],
                 properties: {
                     name: {
@@ -50,6 +51,51 @@ export async function createUserCollectionWithValidation(
                     number: {
                         bsonType: 'string',
                         description: 'Deve ser uma string e é obrigatório.',
+                    },
+                    complement: {
+                        bsonType: 'string',
+                        description: 'Deve ser uma string e é obrigatório.',
+                    },
+                    quota: {
+                        bsonType: 'object',
+                        required: [
+                            'pointCloudQuotaMB',
+                            'imageSizeQuotaMB',
+                            'BIMSizeQuotaMB',
+                            'pointCloudUsedMB',
+                            'imageUsedMB',
+                            'BIMUsedMB',
+                        ],
+                        properties: {
+                            pointCloudQuotaMB: {
+                                bsonType: 'number',
+                                description:
+                                    'Quota para nuvem de pontos (number)',
+                            },
+                            imageSizeQuotaMB: {
+                                bsonType: 'number',
+                                description:
+                                    'Quota para tamanho da imagem (number)',
+                            },
+                            BIMSizeQuotaMB: {
+                                bsonType: 'number',
+                                description:
+                                    'Quota para tamanho do BIM (number)',
+                            },
+                            pointCloudUsedMB: {
+                                bsonType: 'number',
+                                description: 'Uso de nuvem de pontos (number)',
+                            },
+                            imageUsedMB: {
+                                bsonType: 'number',
+                                description:
+                                    'Uso de tamanho da imagem (number)',
+                            },
+                            BIMUsedMB: {
+                                bsonType: 'number',
+                                description: 'Uso de tamanho do BIM (number)',
+                            },
+                        },
                     },
                 },
             },

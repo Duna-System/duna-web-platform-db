@@ -38,5 +38,20 @@ class UserService {
             return user;
         });
     }
+    update(user) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //Check if mongoDB is connected
+            (0, connection_1.checkConnectionStatus)();
+            const user_record = yield this.model.findByIdAndUpdate(user._id, user, {
+                new: true,
+            });
+            if (!user_record) {
+                const err = duna_web_platform_error_defs_1.ErrorMessages.UserNotFound;
+                err.Details = `User '${user._id}' not found'`;
+                throw err;
+            }
+            return user_record.toJSON();
+        });
+    }
 }
 exports.UserService = UserService;

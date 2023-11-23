@@ -13,6 +13,7 @@ export interface IUsers {
     street: string;
     number: string;
     complement: string;
+    quota: QuotaInfo;
     validatedMail: boolean;
     [key: string]: any;
 }
@@ -42,7 +43,6 @@ export interface IProjectDb {
     type: string;
     snapshot?: string;
     favorite: boolean;
-    quota: QuotaInfo;
     clouds: Array<string>;
     images: Array<string>;
     bim: Array<string>;
