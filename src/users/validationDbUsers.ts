@@ -2,6 +2,21 @@ import dotenv from 'dotenv'
 import { MongoClient, Db, Collection } from 'mongodb'
 
 dotenv.config()
+async function removerDocumentosExpirados(colecao: Collection): Promise<void> {
+    const tempoExpiracao = new Date(Date.now() - 24 * 60 * 60 * 1000) // Tempo para verificar expiração (24 horas no passado)
+
+    try {
+        const resultado = await colecao.deleteMany({
+            validatedMail: false,
+            createdAt: { $lte: tempoExpiracao },
+        })
+        console.log(
+            `${resultado.deletedCount} documentos com validatedMail false e mais de 24 horas foram removidos.`
+        )
+    } catch (error) {
+        console.error('Erro ao remover documentos:', error)
+    }
+}
 
 export async function createUserCollectionWithValidation(
     uri: string,
@@ -69,6 +84,12 @@ export async function createUserCollectionWithValidation(
 
     console.log(
         `Coleção ${collectionName} com regras de validação criada com sucesso.`
+    )
+    setInterval(
+        () => {
+            removerDocumentosExpirados(colecao)
+        },
+        2 * 60 * 1000
     )
 
     await client.close()
