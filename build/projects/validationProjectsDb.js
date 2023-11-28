@@ -36,6 +36,7 @@ function createProjectCollectionWithValidation(uri, databaseName, collection_pro
                         'clouds',
                         'images',
                         'bim',
+                        'projectQuota',
                         'createdAt',
                         'modifiedAt',
                         'publicAccessToken',
@@ -80,6 +81,28 @@ function createProjectCollectionWithValidation(uri, databaseName, collection_pro
                             bsonType: 'array',
                             items: { bsonType: 'string' },
                             description: 'Lista de modelos BIM associados (array de strings)',
+                        },
+                        projectQuota: {
+                            bsonType: 'object',
+                            required: [
+                                'pointCloudUsedMB',
+                                'imageUsedMB',
+                                'BIMUsedMB',
+                            ],
+                            properties: {
+                                pointCloudUsedMB: {
+                                    bsonType: 'number',
+                                    description: 'Uso de nuvem de pontos (number)',
+                                },
+                                imageUsedMB: {
+                                    bsonType: 'number',
+                                    description: 'Uso de tamanho da imagem (number)',
+                                },
+                                BIMUsedMB: {
+                                    bsonType: 'number',
+                                    description: 'Uso de tamanho do BIM (number)',
+                                },
+                            },
                         },
                         createdAt: {
                             bsonType: 'number',
