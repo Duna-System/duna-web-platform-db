@@ -35,7 +35,6 @@ function createUserService(user) {
                 street: user.street,
                 number: user.number,
                 complement: user.complement,
-                createdAt: new Date()
             });
             const savedUser = yield newUser.save();
             return savedUser;

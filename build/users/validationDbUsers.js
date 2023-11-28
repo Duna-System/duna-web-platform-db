@@ -59,25 +59,20 @@ function createUserCollectionWithValidation(uri, databaseName, collectionName) {
                             bsonType: 'string',
                             description: 'Deve ser uma string e é obrigatório.',
                         },
-                        createdAt: {
-                            bsonType: 'date',
-                            description: 'Deve ser uma data e é obrigatório.',
-                        },
                     },
                 },
             },
             validationLevel: 'strict',
             validationAction: 'error',
         };
-        // Criação do índice de expiração no campo 'createdAt' após 2 minutos
-        yield colecao.createIndex({ createdAt: 1 }, { expireAfterSeconds: 120 });
+        yield colecao.createIndex({ _id: 1 });
         yield db.command({
             collMod: colecao.collectionName,
             validator: validationRules.validator,
             validationLevel: validationRules.validationLevel,
             validationAction: validationRules.validationAction,
         });
-        console.log(`Coleção ${collectionName} com regras de validação e expiração criada com sucesso.`);
+        console.log(`Coleção ${collectionName} com regras de validação criada com sucesso.`);
         yield client.close();
     });
 }
