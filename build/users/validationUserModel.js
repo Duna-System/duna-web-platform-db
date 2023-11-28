@@ -20,7 +20,7 @@ const UserSchema = new mongoose_1.default.Schema({
     number: { type: String, required: true, default: '' },
     complement: { type: String, default: '' },
     validatedMail: { type: Boolean, required: true, default: false },
+    createdAt: { type: Date, default: Date.now, expires: 60 } // Expires in 120 seconds (2 minutes)
 });
-UserSchema.index({ validatedMail: 1 }, { expireAfterSeconds: 60 }); // Expires in 120s
 const UserModel = mongoose_1.default.model('user', UserSchema);
 exports.UserModel = UserModel;
