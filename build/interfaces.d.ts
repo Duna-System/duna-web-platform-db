@@ -14,6 +14,7 @@ export interface IUsers {
     number: string;
     complement: string;
     validatedMail: boolean;
+    createdAt: Date;
     [key: string]: any;
 }
 export interface IEntityDb {

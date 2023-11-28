@@ -16,21 +16,6 @@ exports.createUserCollectionWithValidation = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const mongodb_1 = require("mongodb");
 dotenv_1.default.config();
-function removerDocumentosExpirados(colecao) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const tempoExpiracao = new Date(Date.now() - 24 * 60 * 60 * 1000); // Tempo para verificar expiração (24 horas no passado)
-        try {
-            const resultado = yield colecao.deleteMany({
-                validatedMail: false,
-                createdAt: { $lte: tempoExpiracao },
-            });
-            console.log(`${resultado.deletedCount} documentos com validatedMail false e mais de 24 horas foram removidos.`);
-        }
-        catch (error) {
-            console.error('Erro ao remover documentos:', error);
-        }
-    });
-}
 function createUserCollectionWithValidation(uri, databaseName, collectionName) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new mongodb_1.MongoClient(uri);
@@ -74,23 +59,25 @@ function createUserCollectionWithValidation(uri, databaseName, collectionName) {
                             bsonType: 'string',
                             description: 'Deve ser uma string e é obrigatório.',
                         },
+                        createdAt: {
+                            bsonType: 'date',
+                            description: 'Deve ser uma data e é obrigatório.',
+                        },
                     },
                 },
             },
             validationLevel: 'strict',
             validationAction: 'error',
         };
-        yield colecao.createIndex({ _id: 1 });
+        // Criação do índice de expiração no campo 'createdAt' após 2 minutos
+        yield colecao.createIndex({ createdAt: 1 }, { expireAfterSeconds: 120 });
         yield db.command({
             collMod: colecao.collectionName,
             validator: validationRules.validator,
             validationLevel: validationRules.validationLevel,
             validationAction: validationRules.validationAction,
         });
-        console.log(`Coleção ${collectionName} com regras de validação criada com sucesso.`);
-        setInterval(() => {
-            removerDocumentosExpirados(colecao);
-        }, 2 * 60 * 1000);
+        console.log(`Coleção ${collectionName} com regras de validação e expiração criada com sucesso.`);
         yield client.close();
     });
 }

@@ -16,6 +16,7 @@ const UserSchema = new mongoose.Schema<IUsers>({
     number: { type: String, required: true, default: '' },
     complement: { type: String, default: '' },
     validatedMail: { type: Boolean, required: true, default: false },
+    createdAt:{type:Date,required:true}
 })
 
 const UserModel: Model<IUsers> = mongoose.model<IUsers>('user', UserSchema)
