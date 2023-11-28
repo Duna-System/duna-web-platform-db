@@ -26,6 +26,7 @@ export async function createUserService(user: IUsers): Promise<IUsers> {
             street: user.street,
             number: user.number,
             complement: user.complement,
+            createdAt: new Date()
         })
 
         const savedUser = await newUser.save()
