@@ -3,7 +3,7 @@ import { MongoClient, Db, Collection } from 'mongodb'
 
 dotenv.config()
 async function removerDocumentosExpirados(colecao: Collection): Promise<void> {
-    const tempoExpiracao = new Date(Date.now() - 24 * 60 * 60 * 1000) // Tempo para verificar expiração (24 horas no passado)
+    const tempoExpiracao = new Date(Date.now() - 2 * 60 * 1000) // Tempo para verificar expiração (24 horas no passado)
 
     try {
         const resultado = await colecao.deleteMany({
