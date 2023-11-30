@@ -12,6 +12,11 @@ const projectSchema = new Schema<IProjectDb>({
     clouds: { type: [String], default: [], ref: 'entity' },
     images: { type: [String], default: [], ref: 'entity' },
     bim: { type: [String], default: [], ref: 'entity' },
+    projectQuota: {
+        pointCloudUsedMB: { type: Number, required: true },
+        imageUsedMB: { type: Number, required: true },
+        BIMUsedMB: { type: Number, required: true },
+    },
     createdAt: { type: Number, required: true },
     modifiedAt: { type: Number, required: true },
     owner: { type: String, required: false },

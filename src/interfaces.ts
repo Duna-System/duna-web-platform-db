@@ -13,7 +13,7 @@ export interface IUsers {
     street: string
     number: string
     complement: string
-    quota: QuotaInfo
+    quota: UserQuota
     validatedMail: boolean
     [key: string]: any
 }
@@ -28,7 +28,20 @@ export interface IEntityDb {
     shareGroup: ShareGroupType
     parentName?: string
 }
-export interface QuotaInfo {
+
+/**
+ * Project level quota. Contains summed up entity sized.
+ */
+export interface ProjectQuota {
+    pointCloudUsedMB: number
+    imageUsedMB: number
+    BIMUsedMB: number
+}
+
+/**
+ * User level quota. Contains quota and used space from all projects.
+ */
+export interface UserQuota {
     pointCloudQuotaMB: number
     imageSizeQuotaMB: number
     BIMSizeQuotaMB: number
@@ -36,6 +49,7 @@ export interface QuotaInfo {
     imageUsedMB: number
     BIMUsedMB: number
 }
+
 export interface IProjectDb {
     _id: string
     user_id: string
@@ -47,6 +61,7 @@ export interface IProjectDb {
     clouds: Array<string>
     images: Array<string>
     bim: Array<string>
+    projectQuota: ProjectQuota
     createdAt: number
     modifiedAt: number
     publicAccessToken: string
