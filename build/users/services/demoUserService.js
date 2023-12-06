@@ -14,10 +14,12 @@ const validationUserModel_1 = require("../validationUserModel");
 function createDemoUserService() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const existingDemoUser = yield validationUserModel_1.UserModel.findOne({ email: 'demo@example.com' });
+            const existingDemoUser = yield validationUserModel_1.UserModel.findOne({
+                email: 'demo@example.com',
+            });
             if (!existingDemoUser) {
                 const demoUser = {
-                    _id: "dc168171-2895-40a3-9800-70bf93ac491a",
+                    _id: 'dc168171-2895-40a3-9800-70bf93ac491a',
                     name: 'Demo',
                     lastName: 'User',
                     email: 'demo@example.com',
