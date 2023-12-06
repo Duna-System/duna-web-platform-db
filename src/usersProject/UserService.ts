@@ -45,19 +45,18 @@ export class UserService {
         return user_record.toJSON<IUsers>()
     }
 
-    public async insert(user: IUsers)
-    {
+    public async insert(user: IUsers) {
         try {
             const existingUser = await UserModel.findOne({ email: user.email })
-    
+
             if (existingUser) {
                 const err: IError = ErrorMessages.ResourceExists
                 throw err
             }
-    
-            const newUser = new UserModel(user);
+
+            const newUser = new UserModel(user)
             const savedUser = await newUser.save()
-    
+
             return savedUser
         } catch (error) {
             if (error !== ErrorMessages.ResourceExists) {
