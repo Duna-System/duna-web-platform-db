@@ -1,10 +1,12 @@
 import mongoose from 'mongoose'
 import { ErrorMessages, IError } from 'duna-web-platform-error-defs'
+import { createCollectionsWithValidations } from './createCollections/createCollections';
 
 export async function connectToDatabase(url: string, databaseName: string) {
     try {
         await mongoose.connect(`${url}/${databaseName}`, {})
         console.log(`Conectado ao banco de dados: ${databaseName}`)
+        await createCollectionsWithValidations(url, databaseName);
     } catch (error) {
         throw error
     }

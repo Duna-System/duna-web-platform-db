@@ -15,11 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.subscribeToDatabaseEvents = exports.checkConnectionStatus = exports.connectToDatabase = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const duna_web_platform_error_defs_1 = require("duna-web-platform-error-defs");
+const createCollections_1 = require("./createCollections/createCollections");
 function connectToDatabase(url, databaseName) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield mongoose_1.default.connect(`${url}/${databaseName}`, {});
             console.log(`Conectado ao banco de dados: ${databaseName}`);
+            yield (0, createCollections_1.createCollectionsWithValidations)(url, databaseName);
         }
         catch (error) {
             throw error;

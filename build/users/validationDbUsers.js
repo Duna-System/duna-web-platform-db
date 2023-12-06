@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createUserCollectionWithValidation = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const mongodb_1 = require("mongodb");
+const demoUserService_1 = require("./services/demoUserService");
 dotenv_1.default.config();
 function createUserCollectionWithValidation(uri, databaseName, collectionName) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -115,6 +116,7 @@ function createUserCollectionWithValidation(uri, databaseName, collectionName) {
             validationAction: validationRules.validationAction,
         });
         console.log(`Coleção ${collectionName} com regras de validação criada com sucesso.`);
+        yield (0, demoUserService_1.createDemoUserService)();
         yield client.close();
     });
 }
