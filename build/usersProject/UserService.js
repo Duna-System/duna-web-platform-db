@@ -53,5 +53,26 @@ class UserService {
             return user_record.toJSON();
         });
     }
+    insert(user) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const existingUser = yield validationUserModel_1.UserModel.findOne({ email: user.email });
+                if (existingUser) {
+                    const err = duna_web_platform_error_defs_1.ErrorMessages.ResourceExists;
+                    throw err;
+                }
+                const newUser = new validationUserModel_1.UserModel(user);
+                const savedUser = yield newUser.save();
+                return savedUser;
+            }
+            catch (error) {
+                if (error !== duna_web_platform_error_defs_1.ErrorMessages.ResourceExists) {
+                    error = duna_web_platform_error_defs_1.ErrorMessages.InternalServerError;
+                    error.Details = 'Possibly wrong data schema.';
+                }
+                throw error;
+            }
+        });
+    }
 }
 exports.UserService = UserService;
