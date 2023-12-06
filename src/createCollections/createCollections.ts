@@ -18,4 +18,3 @@ export async function createCollectionsWithValidations(
     }
 }
 
-// Rest of your existing functions...

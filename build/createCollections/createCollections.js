@@ -31,4 +31,3 @@ function createCollectionsWithValidations(uri, databaseName) {
     });
 }
 exports.createCollectionsWithValidations = createCollectionsWithValidations;
-// Rest of your existing functions...
