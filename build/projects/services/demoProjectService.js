@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createDemoUserService = void 0;
+exports.createDemoProject = void 0;
 const validationProjectsModel_1 = require("../validationProjectsModel");
 const interfaces_1 = require("../../interfaces");
-function createDemoUserService() {
+function createDemoProject() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const existingDemoProject = yield validationProjectsModel_1.projectModel.findOne({
@@ -55,4 +55,4 @@ function createDemoUserService() {
         }
     });
 }
-exports.createDemoUserService = createDemoUserService;
+exports.createDemoProject = createDemoProject;

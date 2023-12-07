@@ -1,1 +1,1 @@
-export declare function createDemoUserService(): Promise<void>;
+export declare function createDemoProject(): Promise<void>;
