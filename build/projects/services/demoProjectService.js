@@ -16,7 +16,7 @@ function createDemoProject() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const existingDemoProject = yield validationProjectsModel_1.projectModel.findOne({
-                projectId: 'demo@example.com',
+                _id: '5b9a1d40-28f9-4991-9a95-7bc72afad8fD',
             });
             if (!existingDemoProject) {
                 const demoProject = {

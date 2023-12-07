@@ -3,7 +3,7 @@ import { IUsers } from '../../interfaces'
 export async function createDemoUserService(): Promise<void> {
     try {
         const existingDemoUser = await UserModel.findOne({
-            email: 'demo@example.com',
+            email: 'demo@dunasystem.com',
         })
         if (!existingDemoUser) {
             const demoUser: IUsers = {

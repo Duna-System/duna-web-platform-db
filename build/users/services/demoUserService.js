@@ -15,7 +15,7 @@ function createDemoUserService() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const existingDemoUser = yield validationUserModel_1.UserModel.findOne({
-                email: 'demo@example.com',
+                email: 'demo@dunasystem.com',
             });
             if (!existingDemoUser) {
                 const demoUser = {

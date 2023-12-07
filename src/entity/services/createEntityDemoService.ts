@@ -3,7 +3,7 @@ import { EntityType, IEntityDb, ShareGroupType } from '../../interfaces'
 export async function createDemoEntity(): Promise<void> {
     try {
         const existingDemoEntity = await entityModel.findOne({
-            _id: 'demo@example.com',
+            _id: '123',
         })
         if (!existingDemoEntity) {
             const DemoEntity: IEntityDb = {

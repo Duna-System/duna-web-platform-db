@@ -16,7 +16,7 @@ function createDemoEntity() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const existingDemoEntity = yield validationEntityModel_1.entityModel.findOne({
-                _id: 'demo@example.com',
+                _id: '123',
             });
             if (!existingDemoEntity) {
                 const DemoEntity = {
@@ -26,7 +26,7 @@ function createDemoEntity() {
                     name: 'entityName',
                     location: '/projects/9dd80d4a-5592-49cd-9fdf-96d16b1d6a72/5b9a1d40-28f9-4991-9a95-7bc72afad8fD/example',
                     sizeMB: 10,
-                    shareGroup: interfaces_1.ShareGroupType.Public
+                    shareGroup: interfaces_1.ShareGroupType.Public,
                 };
                 const newDemoEntity = new validationEntityModel_1.entityModel(DemoEntity);
                 yield newDemoEntity.save();
