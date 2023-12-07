@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createEntityCollectionWithValidation = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const mongodb_1 = require("mongodb");
+const createEntityDemoService_1 = require("./services/createEntityDemoService");
 dotenv_1.default.config();
 function createEntityCollectionWithValidation(uri, databaseName, collectionName) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -77,6 +78,7 @@ function createEntityCollectionWithValidation(uri, databaseName, collectionName)
             validationAction: validationRules.validationAction,
         });
         console.log(`Collection ${collectionName} with validation rules created successfully.`);
+        yield (0, createEntityDemoService_1.creatDemoEntity)();
         yield client.close();
     });
 }

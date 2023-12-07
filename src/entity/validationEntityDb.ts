@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import { MongoClient, Db, Collection } from 'mongodb'
+import { creatDemoEntity } from './services/createEntityDemoService'
 
 dotenv.config()
 
@@ -78,6 +79,7 @@ export async function createEntityCollectionWithValidation(
     console.log(
         `Collection ${collectionName} with validation rules created successfully.`
     )
+    await creatDemoEntity()
 
     await client.close()
 }

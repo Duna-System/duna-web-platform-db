@@ -7,8 +7,8 @@ export async function createDemoProject(): Promise<void> {
         })
         if (!existingDemoProject) {
             const demoProject: IProjectDb = {
-                _id: '123',
-                user_id: '123',
+                _id: '5b9a1d40-28f9-4991-9a95-7bc72afad8fD',
+                user_id: '9dd80d4a-5592-49cd-9fdf-96d16b1d6a72',
                 name: 'Example',
                 clientName: 'Example',
                 type: 'Example',

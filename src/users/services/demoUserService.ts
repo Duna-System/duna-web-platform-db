@@ -7,10 +7,10 @@ export async function createDemoUserService(): Promise<void> {
         })
         if (!existingDemoUser) {
             const demoUser: IUsers = {
-                _id: 'dc168171-2895-40a3-9800-70bf93ac491a',
+                _id: '9dd80d4a-5592-49cd-9fdf-96d16b1d6a72',
                 name: 'Demo',
                 lastName: 'User',
-                email: 'demo@example.com',
+                email: 'demo@dunasystem.com',
                 password: 'demo@123',
                 actingField: 'teste',
                 phoneNumber: 'teste',
