@@ -1,6 +1,6 @@
 import { entityModel } from '../validationEntityModel'
 import { EntityType, IEntityDb, ShareGroupType } from '../../interfaces'
-export async function creatDemoEntity(): Promise<void> {
+export async function createDemoEntity(): Promise<void> {
     try {
         const existingDemoEntity = await entityModel.findOne({
             _id: 'demo@example.com',
@@ -11,10 +11,11 @@ export async function creatDemoEntity(): Promise<void> {
                 projectId: '123',
                 type: EntityType.PointCloud,
                 name: 'entityName',
-                location: '/projects/9dd80d4a-5592-49cd-9fdf-96d16b1d6a72/5b9a1d40-28f9-4991-9a95-7bc72afad8fD/example',
+                location:
+                    '/projects/9dd80d4a-5592-49cd-9fdf-96d16b1d6a72/5b9a1d40-28f9-4991-9a95-7bc72afad8fD/example',
                 sizeMB: 10,
-                shareGroup: ShareGroupType.Public 
-            };
+                shareGroup: ShareGroupType.Public,
+            }
             const newDemoEntity = new entityModel(DemoEntity)
             await newDemoEntity.save()
             console.log('Entidade de demonstração criado com sucesso.')

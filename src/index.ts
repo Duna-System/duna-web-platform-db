@@ -27,6 +27,7 @@ import { updateUserService } from './users/services/updateUserService'
 import { UserService } from './usersProject/UserService'
 import { createCollectionsWithValidations } from './createCollections/createCollections'
 import { createDemoProject } from './projects/services/demoProjectService'
+import { createDemoEntity } from './entity/services/createEntityDemoService'
 
 export {
     createUserCollectionWithValidation,
@@ -44,6 +45,7 @@ export {
     getUserByEmail,
     createCollectionsWithValidations,
     createDemoProject,
+    createDemoEntity,
     UserService,
     OrganizationService,
     EntityService,

@@ -136,7 +136,7 @@ export async function createProjectCollectionWithValidation(
     console.log(
         `Collection ${collection_projects} with validation rules created successfully.`
     )
-    
+
     await createDemoProject()
     await client.close()
 }

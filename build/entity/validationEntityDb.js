@@ -78,7 +78,7 @@ function createEntityCollectionWithValidation(uri, databaseName, collectionName)
             validationAction: validationRules.validationAction,
         });
         console.log(`Collection ${collectionName} with validation rules created successfully.`);
-        yield (0, createEntityDemoService_1.creatDemoEntity)();
+        yield (0, createEntityDemoService_1.createDemoEntity)();
         yield client.close();
     });
 }

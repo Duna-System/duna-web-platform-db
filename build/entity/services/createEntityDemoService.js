@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.creatDemoEntity = void 0;
+exports.createDemoEntity = void 0;
 const validationEntityModel_1 = require("../validationEntityModel");
 const interfaces_1 = require("../../interfaces");
-function creatDemoEntity() {
+function createDemoEntity() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const existingDemoEntity = yield validationEntityModel_1.entityModel.findOne({
@@ -42,4 +42,4 @@ function creatDemoEntity() {
         }
     });
 }
-exports.creatDemoEntity = creatDemoEntity;
+exports.createDemoEntity = createDemoEntity;

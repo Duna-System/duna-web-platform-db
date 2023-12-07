@@ -1,1 +1,1 @@
-export declare function creatDemoEntity(): Promise<void>;
+export declare function createDemoEntity(): Promise<void>;
