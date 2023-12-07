@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import { MongoClient, Db, Collection } from 'mongodb'
-import { createDemoUserService } from './services/demoProjectService'
+import { createDemoProject } from './services/demoProjectService'
 
 dotenv.config()
 
@@ -137,6 +137,6 @@ export async function createProjectCollectionWithValidation(
         `Collection ${collection_projects} with validation rules created successfully.`
     )
     
-    await createDemoUserService()
+    await createDemoProject()
     await client.close()
 }

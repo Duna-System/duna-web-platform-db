@@ -1,6 +1,6 @@
 import { projectModel } from '../validationProjectsModel'
 import { IProjectDb, ProjectAccessType, ProjectStatus } from '../../interfaces'
-export async function createDemoUserService(): Promise<void> {
+export async function createDemoProject(): Promise<void> {
     try {
         const existingDemoProject = await projectModel.findOne({
             projectId: 'demo@example.com',
