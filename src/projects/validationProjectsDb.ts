@@ -78,6 +78,12 @@ export async function createProjectCollectionWithValidation(
                         description:
                             'Lista de modelos BIM associados (array de strings)',
                     },
+                    phtogrammetry: {
+                        bsonType: 'array',
+                        items: { bsonType: 'string' },
+                        description:
+                            'Entidade de fogotrametria [unica] (array de strings)',
+                    },
                     projectQuota: {
                         bsonType: 'object',
                         required: [
