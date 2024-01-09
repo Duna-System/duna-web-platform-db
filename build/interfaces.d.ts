@@ -104,5 +104,6 @@ export declare enum EntityType {
     PointCloud = "clouds",
     Image = "images",
     BIM = "bim",
+    Photogrammetry = "photogrammerty",
     Unknown = "unknown"
 }
