@@ -34,6 +34,7 @@ export interface ProjectQuota {
     pointCloudUsedMB: number;
     imageUsedMB: number;
     BIMUsedMB: number;
+    photogrammetryUsedMB: number;
 }
 /**
  * User level quota. Contains quota and used space from all projects.
@@ -42,9 +43,11 @@ export interface UserQuota {
     pointCloudQuotaMB: number;
     imageSizeQuotaMB: number;
     BIMSizeQuotaMB: number;
+    photogrammetryQuotaMB: number;
     pointCloudUsedMB: number;
     imageUsedMB: number;
     BIMUsedMB: number;
+    photogrammetryUsedMB: number;
 }
 export interface IProjectDb {
     _id: string;
@@ -57,6 +60,7 @@ export interface IProjectDb {
     clouds: Array<string>;
     images: Array<string>;
     bim: Array<string>;
+    photogrammetry: Array<string>;
     projectQuota: ProjectQuota;
     createdAt: number;
     modifiedAt: number;

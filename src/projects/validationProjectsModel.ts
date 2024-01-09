@@ -12,6 +12,7 @@ const projectSchema = new Schema<IProjectDb>({
     clouds: { type: [String], default: [], ref: 'entity' },
     images: { type: [String], default: [], ref: 'entity' },
     bim: { type: [String], default: [], ref: 'entity' },
+    photogrammetry: { type: [String], default: [], ref: 'entity' },
     projectQuota: {
         pointCloudUsedMB: { type: Number, required: true },
         imageUsedMB: { type: Number, required: true },

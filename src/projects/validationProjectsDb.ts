@@ -28,6 +28,7 @@ export async function createProjectCollectionWithValidation(
                     'clouds',
                     'images',
                     'bim',
+                    'photogrammetry',
                     'projectQuota',
                     'createdAt',
                     'modifiedAt',
@@ -83,20 +84,28 @@ export async function createProjectCollectionWithValidation(
                             'pointCloudUsedMB',
                             'imageUsedMB',
                             'BIMUsedMB',
+                            'photogrammetryUsedMB',
                         ],
                         properties: {
                             pointCloudUsedMB: {
                                 bsonType: 'number',
-                                description: 'Uso de nuvem de pontos (number)',
+                                description:
+                                    'Sized used by pointcloud entities (number)',
                             },
                             imageUsedMB: {
                                 bsonType: 'number',
                                 description:
-                                    'Uso de tamanho da imagem (number)',
+                                    'Sized used by image entities (number)',
                             },
                             BIMUsedMB: {
                                 bsonType: 'number',
-                                description: 'Uso de tamanho do BIM (number)',
+                                description:
+                                    'Sized used by BIM entities (number)',
+                            },
+                            photogrammetryUsedMB: {
+                                bsonType: 'number',
+                                description:
+                                    'Sized used by photogrammetry entities (number)',
                             },
                         },
                     },
