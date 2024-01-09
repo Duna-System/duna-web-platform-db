@@ -52,6 +52,7 @@ class ProjectService {
                 .populate('clouds')
                 .populate('bim')
                 .populate('images')
+                .populate('photogrammetry')
                 .lean()
                 .exec();
             if (!project_record) {
