@@ -17,6 +17,7 @@ const projectSchema = new Schema<IProjectDb>({
         pointCloudUsedMB: { type: Number, required: true },
         imageUsedMB: { type: Number, required: true },
         BIMUsedMB: { type: Number, required: true },
+        photogrammetryUsedMB: { type: Number, required: true },
     },
     createdAt: { type: Number, required: true },
     modifiedAt: { type: Number, required: true },
