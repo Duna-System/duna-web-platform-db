@@ -34,6 +34,7 @@ export async function createUserService(user: IUsers): Promise<IUsers> {
                 imageUsedMB: 0,
                 pointCloudUsedMB: 0,
             },
+            customerId:user.customerId
         })
 
         const savedUser = await newUser.save()

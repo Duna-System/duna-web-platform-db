@@ -43,6 +43,7 @@ function createUserService(user) {
                     imageUsedMB: 0,
                     pointCloudUsedMB: 0,
                 },
+                customerId: user.customerId
             });
             const savedUser = yield newUser.save();
             return savedUser;

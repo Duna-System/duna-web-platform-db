@@ -27,6 +27,7 @@ const UserSchema = new mongoose_1.default.Schema({
         imageUsedMB: { type: Number, required: true },
         BIMUsedMB: { type: Number, required: true },
     },
+    customerId: { type: String, required: false },
     validatedMail: { type: Boolean, required: true, default: false },
 });
 const UserModel = mongoose_1.default.model('user', UserSchema);
