@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema<IUsers>({
         imageUsedMB: { type: Number, required: true },
         BIMUsedMB: { type: Number, required: true },
     },
-    customerId:{type:String, required:false},
+    customerId: { type: String, required: false },
     validatedMail: { type: Boolean, required: true, default: false },
 })
 
