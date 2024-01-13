@@ -25,6 +25,7 @@ import { ProjectService } from './projects/services/ProjectService'
 import { OrganizationService } from './organizations/services/OrganizationService'
 import { updateUserService } from './users/services/updateUserService'
 import { UserService } from './usersProject/UserService'
+import { updateCustomerId } from './users/services/updateCustomerIdService'
 
 export {
     createUserCollectionWithValidation,
@@ -40,6 +41,7 @@ export {
     createUserService,
     updateUserService,
     getUserByEmail,
+    updateCustomerId,
     UserService,
     OrganizationService,
     EntityService,
