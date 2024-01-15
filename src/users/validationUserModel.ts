@@ -23,6 +23,11 @@ const UserSchema = new mongoose.Schema<IUsers>({
         imageUsedMB: { type: Number, required: true },
         BIMUsedMB: { type: Number, required: true },
     },
+    paymentInfo: {
+        customerId: { type: String, required: true, default:'' },
+        plan: { type: String, required: true, default:'' },
+        expirationDate: { type: Date, required: true, default:'' },
+      },
     customerId: { type: String, required: false },
     validatedMail: { type: Boolean, required: true, default: false },
 })
