@@ -5,39 +5,33 @@ import { UserModel } from '../validationUserModel'
 
 export async function updateCustomerId(
     email: string,
-    updates: Partial<IUsers>
-): Promise<IUsers | null> {
+    updates: Partial<IUsers['paymentInfo']>
+  ): Promise<IUsers | null> {
     try {
-        const existingUser = await UserModel.findOne({ email: email });
-
-        if (!existingUser) {
-            return null;
-        }
-
-        if (updates.customerId) {
-            existingUser.customerId = updates.customerId;
-        }
-
-        if (updates.paymentInfo) {
-            const paymentInfoUpdates = updates.paymentInfo;
-            if (paymentInfoUpdates.customerId) {
-                existingUser.paymentInfo.customerId = paymentInfoUpdates.customerId;
-            }
-            if (paymentInfoUpdates.plan) {
-                existingUser.paymentInfo.plan = paymentInfoUpdates.plan;
-            }
-            if (paymentInfoUpdates.expirationDate) {
-                existingUser.paymentInfo.expirationDate = paymentInfoUpdates.expirationDate;
-            }
-        }
-
-        await existingUser.save();
-
-        return existingUser;
-    } catch (error) {
-        console.error('Error in updateUserService:', error);
-        const err = ErrorMessages.InternalServerError;
-        err.Details = 'Error updating user data.';
+      const filter = { email };
+      const update = {
+        $set: {
+          'paymentInfo.customerId': updates.customerId,
+          'paymentInfo.plan': updates.plan,
+          'paymentInfo.expirationDate': updates.expirationDate,
+        },
+      };
+  
+      const options = { new: true }; 
+  
+      const updatedUser = await UserModel.findOneAndUpdate(filter, update, options);
+  
+      if (!updatedUser) {
+        const err = ErrorMessages.UserNotFound.Message
         throw err;
+      }
+  
+      return updatedUser;
+    } catch (error) {
+      console.error('Error in updateCustomerId:', error);
+      const err = ErrorMessages.InternalServerError;
+      err.Details = 'Error updating user data.';
+      throw err;
     }
-}
+  }
+  
