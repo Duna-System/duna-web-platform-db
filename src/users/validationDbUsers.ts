@@ -105,17 +105,17 @@ export async function createUserCollectionWithValidation(
                             customerId: {
                                 bsonType: 'string',
                                 description:
-                                    'Deve ser uma string e é obrigatório.',
+                                    'Deve ser uma string .',
                             },
                             plan: {
                                 bsonType: 'string',
                                 description:
-                                    'Deve ser uma string e é obrigatório.',
+                                    'Deve ser uma string .',
                             },
                             expirationDate: {
                                 bsonType: 'date',
                                 description:
-                                    'Deve ser uma data e é obrigatório.',
+                                    'Deve ser uma data .',
                             },
                         },
                     },

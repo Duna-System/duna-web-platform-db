@@ -108,15 +108,15 @@ function createUserCollectionWithValidation(uri, databaseName, collectionName) {
                             properties: {
                                 customerId: {
                                     bsonType: 'string',
-                                    description: 'Deve ser uma string e é obrigatório.',
+                                    description: 'Deve ser uma string .',
                                 },
                                 plan: {
                                     bsonType: 'string',
-                                    description: 'Deve ser uma string e é obrigatório.',
+                                    description: 'Deve ser uma string .',
                                 },
                                 expirationDate: {
                                     bsonType: 'date',
-                                    description: 'Deve ser uma data e é obrigatório.',
+                                    description: 'Deve ser uma data .',
                                 },
                             },
                         },
