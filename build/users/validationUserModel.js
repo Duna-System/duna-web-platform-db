@@ -30,7 +30,7 @@ const UserSchema = new mongoose_1.default.Schema({
     paymentInfo: {
         customerId: { type: String, required: false, default: '' },
         plan: { type: String, required: false, default: '' },
-        expirationDate: { type: Date, required: false, default: '' },
+        expirationDate: { type: String, required: false, default: '' },
     },
     customerId: { type: String, required: false },
     validatedMail: { type: Boolean, required: true, default: false },
