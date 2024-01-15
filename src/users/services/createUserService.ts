@@ -35,9 +35,9 @@ export async function createUserService(user: IUsers): Promise<IUsers> {
                 pointCloudUsedMB: 0,
             },
             paymentInfo: {
-                customerId: user.paymentInfo.customerId , 
-                plan: user.paymentInfo.plan , 
-                expirationDate: user.paymentInfo.expirationDate , 
+                customerId: user.paymentInfo.customerId,
+                plan: user.paymentInfo.plan,
+                expirationDate: user.paymentInfo.expirationDate,
             },
         })
 
