@@ -82,7 +82,7 @@ export async function createProjectCollectionWithValidation(
                         bsonType: 'array',
                         items: { bsonType: 'string' },
                         description:
-                            'Photogrammetry entity [unica] (string array)',
+                            'Photogrammetry entity [unique] (string array)',
                     },
                     projectQuota: {
                         bsonType: 'object',
@@ -125,7 +125,8 @@ export async function createProjectCollectionWithValidation(
                     },
                     publicAccessToken: {
                         bsonType: 'string',
-                        description: 'Public access token (for shared projects) (string)',
+                        description:
+                            'Public access token (for shared projects) (string)',
                     },
                     status: {
                         bsonType: 'string',
