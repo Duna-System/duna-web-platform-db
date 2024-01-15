@@ -15,7 +15,11 @@ export interface IUsers {
     complement: string;
     quota: UserQuota;
     validatedMail: boolean;
-    customerId: string;
+    paymentInfo: {
+        customerId: string;
+        plan: string;
+        expirationDate: Date;
+    };
     [key: string]: any;
 }
 export interface IEntityDb {

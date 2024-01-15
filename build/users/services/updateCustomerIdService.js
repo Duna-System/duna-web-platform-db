@@ -19,8 +19,21 @@ function updateCustomerId(email, updates) {
             if (!existingUser) {
                 return null;
             }
-            if (updates.customerId)
+            if (updates.customerId) {
                 existingUser.customerId = updates.customerId;
+            }
+            if (updates.paymentInfo) {
+                const paymentInfoUpdates = updates.paymentInfo;
+                if (paymentInfoUpdates.customerId) {
+                    existingUser.paymentInfo.customerId = paymentInfoUpdates.customerId;
+                }
+                if (paymentInfoUpdates.plan) {
+                    existingUser.paymentInfo.plan = paymentInfoUpdates.plan;
+                }
+                if (paymentInfoUpdates.expirationDate) {
+                    existingUser.paymentInfo.expirationDate = paymentInfoUpdates.expirationDate;
+                }
+            }
             yield existingUser.save();
             return existingUser;
         }
