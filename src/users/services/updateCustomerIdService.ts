@@ -2,6 +2,7 @@ import { ErrorMessages } from 'duna-web-platform-error-defs'
 import { IUsers } from '../../interfaces'
 import { UserModel } from '../validationUserModel'
 
+//atualizar novos campos do paymentInfo
 export async function updateCustomerId(
     email: string,
     updates: Partial<IUsers>

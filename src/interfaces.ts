@@ -16,10 +16,10 @@ export interface IUsers {
     quota: UserQuota
     validatedMail: boolean
     paymentInfo: {
-        customerId?: string;
-        plan?: string;
-        expirationDate?: Date;
-      }
+        customerId: string
+        plan: string
+        expirationDate: Date
+    }
     [key: string]: any
 }
 
