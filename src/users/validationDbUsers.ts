@@ -26,6 +26,7 @@ export async function createUserCollectionWithValidation(
                     'street',
                     'number',
                     'quota',
+                    'paymentInfo',
                 ],
                 properties: {
                     name: {
@@ -94,6 +95,27 @@ export async function createUserCollectionWithValidation(
                             BIMUsedMB: {
                                 bsonType: 'number',
                                 description: 'Uso de tamanho do BIM (number)',
+                            },
+                        },
+                    },
+                    paymentInfo: {
+                        bsonType: 'object',
+                        required: ['customerId', 'plan', 'expirationDate'],
+                        properties: {
+                            customerId: {
+                                bsonType: 'string',
+                                description:
+                                    'Deve ser uma string e é obrigatório.',
+                            },
+                            plan: {
+                                bsonType: 'string',
+                                description:
+                                    'Deve ser uma string e é obrigatório.',
+                            },
+                            expirationDate: {
+                                bsonType: 'date',
+                                description:
+                                    'Deve ser uma data e é obrigatório.',
                             },
                         },
                     },
