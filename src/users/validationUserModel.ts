@@ -28,7 +28,6 @@ const UserSchema = new mongoose.Schema<IUsers>({
         plan: { type: String, required: true, default: '' },
         expirationDate: { type: String, required: true, default: '' },
     },
-    customerId: { type: String, required: false },
     validatedMail: { type: Boolean, required: true, default: false },
 })
 
