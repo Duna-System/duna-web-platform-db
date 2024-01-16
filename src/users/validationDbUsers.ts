@@ -96,9 +96,7 @@ export async function createUserCollectionWithValidation(
                                 description: 'Uso de tamanho do BIM (number)',
                             },
                         },
-                        
                     },
-                    
                 },
             },
         },
