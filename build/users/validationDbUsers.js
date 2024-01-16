@@ -34,7 +34,6 @@ function createUserCollectionWithValidation(uri, databaseName, collectionName) {
                         'street',
                         'number',
                         'quota',
-                        'paymentInfo',
                     ],
                     properties: {
                         name: {
@@ -99,24 +98,6 @@ function createUserCollectionWithValidation(uri, databaseName, collectionName) {
                                 BIMUsedMB: {
                                     bsonType: 'number',
                                     description: 'Uso de tamanho do BIM (number)',
-                                },
-                            },
-                        },
-                        paymentInfo: {
-                            bsonType: 'object',
-                            required: ['customerId', 'plan', 'expirationDate'],
-                            properties: {
-                                customerId: {
-                                    bsonType: 'string',
-                                    description: 'Deve ser uma string e é obrigatório.',
-                                },
-                                plan: {
-                                    bsonType: 'string',
-                                    description: 'Deve ser uma string e é obrigatório.',
-                                },
-                                expirationDate: {
-                                    bsonType: 'date',
-                                    description: 'Deve ser uma data e é obrigatório.',
                                 },
                             },
                         },
