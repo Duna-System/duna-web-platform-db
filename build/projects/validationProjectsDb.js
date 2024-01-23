@@ -83,7 +83,7 @@ function createProjectCollectionWithValidation(uri, databaseName, collection_pro
                             items: { bsonType: 'string' },
                             description: 'List of associated BIM entities (string array)',
                         },
-                        phtogrammetry: {
+                        photogrammetry: {
                             bsonType: 'array',
                             items: { bsonType: 'string' },
                             description: 'Photogrammetry entity [unique] (string array)',
