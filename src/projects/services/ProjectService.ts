@@ -47,6 +47,7 @@ export class ProjectService {
             .populate('clouds')
             .populate('bim')
             .populate('images')
+            .populate('photogrammetry')
             .lean()
             .exec()
 
@@ -149,6 +150,7 @@ export class ProjectService {
             .populate('clouds')
             .populate('bim')
             .populate('images')
+            .populate('photogrammetry')
             .lean()
             .exec()
         return projects

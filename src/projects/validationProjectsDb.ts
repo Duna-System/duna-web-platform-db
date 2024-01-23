@@ -28,6 +28,7 @@ export async function createProjectCollectionWithValidation(
                     'clouds',
                     'images',
                     'bim',
+                    'photogrammetry',
                     'projectQuota',
                     'createdAt',
                     'modifiedAt',
@@ -37,45 +38,51 @@ export async function createProjectCollectionWithValidation(
                 properties: {
                     _id: {
                         bsonType: 'string',
-                        description: 'ID do projeto (string)',
+                        description: 'project ID (string)',
                     },
                     user_id: {
                         bsonType: 'string',
-                        description: 'ID do usuário (string)',
+                        description: 'user ID (string)',
                     },
                     name: {
                         bsonType: 'string',
-                        description: 'Nome do projeto (string)',
+                        description: 'Project name (string)',
                     },
                     clientName: {
                         bsonType: 'string',
-                        description: 'Nome do cliente (string)',
+                        description: 'Client name (string)',
                     },
                     type: {
                         bsonType: 'string',
-                        description: 'Tipo do projeto (string)',
+                        description: 'Project type (string)',
                     },
                     favorite: {
                         bsonType: 'bool',
-                        description: 'Indicador de favorito (boolean)',
+                        description: 'Favorite indicator (boolean)',
                     },
                     clouds: {
                         bsonType: 'array',
                         items: { bsonType: 'string' },
                         description:
-                            'Lista de nuvens associadas (array de strings)',
+                            'List of associated pointcloud entities (string array)',
                     },
                     images: {
                         bsonType: 'array',
                         items: { bsonType: 'string' },
                         description:
-                            'Lista de imagens associadas (array de strings)',
+                            'List of associated image entities (string array)',
                     },
                     bim: {
                         bsonType: 'array',
                         items: { bsonType: 'string' },
                         description:
-                            'Lista de modelos BIM associados (array de strings)',
+                            'List of associated BIM entities (string array)',
+                    },
+                    phtogrammetry: {
+                        bsonType: 'array',
+                        items: { bsonType: 'string' },
+                        description:
+                            'Photogrammetry entity [unique] (string array)',
                     },
                     projectQuota: {
                         bsonType: 'object',
@@ -83,38 +90,47 @@ export async function createProjectCollectionWithValidation(
                             'pointCloudUsedMB',
                             'imageUsedMB',
                             'BIMUsedMB',
+                            'photogrammetryUsedMB',
                         ],
                         properties: {
                             pointCloudUsedMB: {
                                 bsonType: 'number',
-                                description: 'Uso de nuvem de pontos (number)',
+                                description:
+                                    'Size in MB used by pointcloud entities (number)',
                             },
                             imageUsedMB: {
                                 bsonType: 'number',
                                 description:
-                                    'Uso de tamanho da imagem (number)',
+                                    'Size in MB used by image entities (number)',
                             },
                             BIMUsedMB: {
                                 bsonType: 'number',
-                                description: 'Uso de tamanho do BIM (number)',
+                                description:
+                                    'Size in MB used by BIM entities (number)',
+                            },
+                            photogrammetryUsedMB: {
+                                bsonType: 'number',
+                                description:
+                                    'Size in MB used by photogrammetry entities (number)',
                             },
                         },
                     },
                     createdAt: {
                         bsonType: 'number',
-                        description: 'Timestamp de criação (number)',
+                        description: 'project creation timestamp (number)',
                     },
                     modifiedAt: {
                         bsonType: 'number',
-                        description: 'Timestamp de modificação (number)',
+                        description: 'project modification timestamp (number)',
                     },
                     publicAccessToken: {
                         bsonType: 'string',
-                        description: 'Token de acesso público (string)',
+                        description:
+                            'Public access token (for shared projects) (string)',
                     },
                     status: {
                         bsonType: 'string',
-                        description: 'Status do projeto (string)',
+                        description: 'Project status (string)',
                     },
                 },
             },

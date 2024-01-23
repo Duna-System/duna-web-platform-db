@@ -30,9 +30,11 @@ export async function createUserService(user: IUsers): Promise<IUsers> {
                 BIMSizeQuotaMB: 5000,
                 pointCloudQuotaMB: 5000,
                 imageSizeQuotaMB: 5000,
+                photogrammetryQuotaMB: 5000,
                 BIMUsedMB: 0,
                 imageUsedMB: 0,
                 pointCloudUsedMB: 0,
+                photogrammetryUsedMB: 0,
             },
             paymentInfo: {
                 customerId: user.paymentInfo.customerId,

@@ -31,4 +31,7 @@ export declare class UserService {
     protected configure(): void;
     get(user_id?: string, email?: string): Promise<IUsers>;
     update(user: IUsers): Promise<IUsers>;
+    insert(user: IUsers): Promise<import("mongoose").Document<unknown, {}, IUsers> & IUsers & Required<{
+        _id: string;
+    }>>;
 }

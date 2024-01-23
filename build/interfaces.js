@@ -28,5 +28,6 @@ var EntityType;
     EntityType["PointCloud"] = "clouds";
     EntityType["Image"] = "images";
     EntityType["BIM"] = "bim";
+    EntityType["Photogrammetry"] = "photogrammerty";
     EntityType["Unknown"] = "unknown";
 })(EntityType || (exports.EntityType = EntityType = {}));

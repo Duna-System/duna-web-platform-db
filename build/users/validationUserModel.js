@@ -23,9 +23,11 @@ const UserSchema = new mongoose_1.default.Schema({
         pointCloudQuotaMB: { type: Number, required: true },
         imageSizeQuotaMB: { type: Number, required: true },
         BIMSizeQuotaMB: { type: Number, required: true },
+        photogrammetryQuotaMB: { type: Number, required: true },
         pointCloudUsedMB: { type: Number, required: true },
         imageUsedMB: { type: Number, required: true },
         BIMUsedMB: { type: Number, required: true },
+        photogrammetryUsedMB: { type: Number, required: true },
     },
     paymentInfo: {
         customerId: { type: String, required: false, default: '' },
