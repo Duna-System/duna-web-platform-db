@@ -59,6 +59,11 @@ export async function createEntityCollectionWithValidation(
                         description:
                             'Holds a name reference to a parent entity. Not required.',
                     },
+                    childLocations: {
+                        bsonType: 'array',
+                        description:
+                            'Holds locations of other objects belonging to the entity. Not required.',
+                    },
                 },
             },
         },
