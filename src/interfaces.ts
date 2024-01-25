@@ -27,6 +27,7 @@ export interface IEntityDb {
     sizeMB: number
     shareGroup: ShareGroupType
     parentName?: string
+    childLocations?: Array<string>
 }
 
 /**
