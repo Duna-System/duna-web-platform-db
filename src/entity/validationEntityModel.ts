@@ -10,7 +10,7 @@ const entitySchema = new Schema<IEntityDb>({
     sizeMB: { type: Number, required: true },
     shareGroup: { type: String, required: true },
     parentName: { type: String, required: false },
-    childLocations: { type: String, required: false },
+    childLocations: { type: [String], required: false },
 })
 
 export const entityModel = model<IEntityDb>('entity', entitySchema)
