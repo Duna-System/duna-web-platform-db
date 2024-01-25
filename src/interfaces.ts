@@ -15,6 +15,11 @@ export interface IUsers {
     complement: string
     quota: UserQuota
     validatedMail: boolean
+    paymentInfo: {
+        customerId: string
+        plan: string
+        expirationDate: Date
+    }
     [key: string]: any
 }
 

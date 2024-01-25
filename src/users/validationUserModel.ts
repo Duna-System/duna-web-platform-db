@@ -25,6 +25,11 @@ const UserSchema = new mongoose.Schema<IUsers>({
         BIMUsedMB: { type: Number, required: true },
         photogrammetryUsedMB: { type: Number, required: true },
     },
+    paymentInfo: {
+        customerId: { type: String, required: false, default: '' },
+        plan: { type: String, required: false, default: '' },
+        expirationDate: { type: String, required: false, default: '' },
+    },
     validatedMail: { type: Boolean, required: true, default: false },
 })
 
