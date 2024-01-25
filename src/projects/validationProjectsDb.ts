@@ -78,7 +78,7 @@ export async function createProjectCollectionWithValidation(
                         description:
                             'List of associated BIM entities (string array)',
                     },
-                    phtogrammetry: {
+                    photogrammetry: {
                         bsonType: 'array',
                         items: { bsonType: 'string' },
                         description:

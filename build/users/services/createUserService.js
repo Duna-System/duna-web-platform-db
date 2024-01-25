@@ -45,6 +45,11 @@ function createUserService(user) {
                     pointCloudUsedMB: 0,
                     photogrammetryUsedMB: 0,
                 },
+                paymentInfo: {
+                    customerId: user.paymentInfo.customerId,
+                    plan: user.paymentInfo.plan,
+                    expirationDate: user.paymentInfo.expirationDate,
+                },
             });
             const savedUser = yield newUser.save();
             return savedUser;

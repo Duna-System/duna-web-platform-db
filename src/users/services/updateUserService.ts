@@ -28,6 +28,16 @@ export async function updateUserService(
         if (updates.complement) existingUser.complement = updates.complement
         if (updates.quota) existingUser.quota = updates.quota
 
+        if (updates.paymentInfo) {
+            if (updates.paymentInfo.plan) {
+                existingUser.paymentInfo.plan = updates.paymentInfo.plan
+            }
+            if (updates.paymentInfo.expirationDate) {
+                existingUser.paymentInfo.expirationDate =
+                    updates.paymentInfo.expirationDate
+            }
+        }
+
         await existingUser.save()
 
         return existingUser
