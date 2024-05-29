@@ -29,5 +29,6 @@ var EntityType;
     EntityType["Image"] = "images";
     EntityType["BIM"] = "bim";
     EntityType["Photogrammetry"] = "photogrammerty";
+    EntityType["CAD"] = "cad";
     EntityType["Unknown"] = "unknown";
 })(EntityType || (exports.EntityType = EntityType = {}));
