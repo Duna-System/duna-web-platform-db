@@ -122,5 +122,6 @@ export enum EntityType {
     Image = 'images',
     BIM = 'bim',
     Photogrammetry = 'photogrammerty',
+    CAD = 'cad',
     Unknown = 'unknown',
 }
