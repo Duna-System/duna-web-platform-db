@@ -36,6 +36,7 @@ function createProjectCollectionWithValidation(uri, databaseName, collection_pro
                         'clouds',
                         'images',
                         'bim',
+                        "cad",
                         'photogrammetry',
                         'projectQuota',
                         'createdAt',
@@ -82,6 +83,11 @@ function createProjectCollectionWithValidation(uri, databaseName, collection_pro
                             bsonType: 'array',
                             items: { bsonType: 'string' },
                             description: 'List of associated BIM entities (string array)',
+                        },
+                        cad: {
+                            bsonType: 'array',
+                            items: { bsonType: 'string' },
+                            description: 'List of associated CAD entities (string array)',
                         },
                         photogrammetry: {
                             bsonType: 'array',

@@ -70,6 +70,7 @@ export interface IProjectDb {
     clouds: Array<string>
     images: Array<string>
     bim: Array<string>
+    cad: Array<string>
     photogrammetry: Array<string>
     projectQuota: ProjectQuota
     createdAt: number
