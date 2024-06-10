@@ -28,7 +28,7 @@ export async function createProjectCollectionWithValidation(
                     'clouds',
                     'images',
                     'bim',
-                    "cad",
+                    'cad',
                     'photogrammetry',
                     'projectQuota',
                     'createdAt',
