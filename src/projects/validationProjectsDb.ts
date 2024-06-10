@@ -28,6 +28,7 @@ export async function createProjectCollectionWithValidation(
                     'clouds',
                     'images',
                     'bim',
+                    'cad',
                     'photogrammetry',
                     'projectQuota',
                     'createdAt',
@@ -77,6 +78,12 @@ export async function createProjectCollectionWithValidation(
                         items: { bsonType: 'string' },
                         description:
                             'List of associated BIM entities (string array)',
+                    },
+                    cad: {
+                        bsonType: 'array',
+                        items: { bsonType: 'string' },
+                        description:
+                            'List of associated CAD entities (string array)',
                     },
                     photogrammetry: {
                         bsonType: 'array',
