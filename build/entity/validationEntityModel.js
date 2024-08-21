@@ -12,5 +12,6 @@ const entitySchema = new mongoose_1.Schema({
     shareGroup: { type: String, required: true },
     parentName: { type: String, required: false },
     childLocations: { type: [String], required: false },
+    segmentationFeatures: { type: [String], required: false },
 });
 exports.entityModel = (0, mongoose_1.model)('entity', entitySchema);
