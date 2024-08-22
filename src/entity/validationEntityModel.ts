@@ -11,6 +11,7 @@ const entitySchema = new Schema<IEntityDb>({
     shareGroup: { type: String, required: true },
     parentName: { type: String, required: false },
     childLocations: { type: [String], required: false },
+    segmentationFeatures: { type: [String], required: false },
 })
 
 export const entityModel = model<IEntityDb>('entity', entitySchema)

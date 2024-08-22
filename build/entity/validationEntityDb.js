@@ -67,6 +67,10 @@ function createEntityCollectionWithValidation(uri, databaseName, collectionName)
                             bsonType: 'array',
                             description: 'Holds locations of other objects belonging to the entity. Not required.',
                         },
+                        segmentationFeatures: {
+                            bsonType: 'array',
+                            description: 'Holds a list of classificaton features used during the segmentation process. Not required.',
+                        },
                     },
                 },
             },

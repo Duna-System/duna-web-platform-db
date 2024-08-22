@@ -33,6 +33,7 @@ export interface IEntityDb {
     shareGroup: ShareGroupType
     parentName?: string
     childLocations?: Array<string>
+    segmentationFeatures?: Array<string>
 }
 
 /**

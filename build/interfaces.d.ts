@@ -32,6 +32,7 @@ export interface IEntityDb {
     shareGroup: ShareGroupType;
     parentName?: string;
     childLocations?: Array<string>;
+    segmentationFeatures?: Array<string>;
 }
 /**
  * Project level quota. Contains summed up entity sized.

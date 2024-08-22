@@ -36,7 +36,7 @@ function createProjectCollectionWithValidation(uri, databaseName, collection_pro
                         'clouds',
                         'images',
                         'bim',
-                        "cad",
+                        'cad',
                         'photogrammetry',
                         'projectQuota',
                         'createdAt',
