@@ -32,7 +32,7 @@ export interface IEntityDb {
     sizeMB: number
     shareGroup: ShareGroupType
     parentName?: string
-    childLocations?: Array<string>,
+    childLocations?: Array<string>
     segmentationFeatures?: Array<string>
 }
 
